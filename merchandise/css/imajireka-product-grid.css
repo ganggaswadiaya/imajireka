@@ -1,0 +1,212 @@
+
+/* =========================================================
+   IMAJIREKA - OUR PRODUCT CARD GRID
+   4 cards per row on desktop, remaining cards continue below.
+   ========================================================= */
+
+.elt-arrival-area .imajireka-product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    column-gap: 18px !important;
+    row-gap: 18px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.elt-arrival-area .imajireka-product-grid > .col {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Card */
+.elt-arrival-area .imajireka-product-grid .aq-product-item {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    background: #ffffff !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    box-shadow: 0 6px 24px rgba(43, 43, 43, 0.055) !important;
+    transition: transform .25s ease, box-shadow .25s ease !important;
+}
+
+.elt-arrival-area .imajireka-product-grid .aq-product-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(43, 43, 43, 0.09) !important;
+}
+
+/* Product image area */
+.elt-arrival-area .imajireka-product-grid .aq-product-thumb {
+    position: relative !important;
+    width: 100% !important;
+    height: 245px !important;
+    min-height: 245px !important;
+    margin: 0 !important;
+    flex: 0 0 245px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #ffffff !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+}
+
+.elt-arrival-area .imajireka-product-grid .aq-product-thumb > a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elt-arrival-area .imajireka-product-grid .aq-product-thumb .aq-product-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    padding: 18px !important;
+}
+
+/* Sale badge */
+.elt-arrival-area .imajireka-product-grid .aq-product-badge {
+    position: absolute !important;
+    top: 16px !important;
+    left: 16px !important;
+    right: auto !important;
+    z-index: 3 !important;
+}
+
+.elt-arrival-area .imajireka-product-grid .aq-product-badge span {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 64px;
+    height: 38px;
+    padding: 0 13px !important;
+    border-radius: 999px !important;
+    background: #F05A5D !important;
+    color: #fff !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+/* Product action buttons stay as hover actions */
+.elt-arrival-area .imajireka-product-grid .aq-product-action {
+    z-index: 4;
+}
+
+/* Content */
+.elt-arrival-area .imajireka-product-grid .imajireka-product-content {
+    width: 100% !important;
+    padding: 8px 22px 24px !important;
+    text-align: left !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    flex: 1 1 auto !important;
+}
+
+/* Color swatches */
+.elt-arrival-area .imajireka-product-grid .aq-product-color {
+    width: 100%;
+    margin: 0 0 16px !important;
+    text-align: left !important;
+}
+
+.elt-arrival-area .imajireka-product-grid .aq-product-color ul {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Product title */
+.elt-arrival-area .imajireka-product-grid .aq-product-title {
+    width: 100% !important;
+    margin: 0 0 14px !important;
+    text-align: left !important;
+    font-family: 'Baloo 2', sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+    font-weight: 600 !important;
+}
+
+.elt-arrival-area .imajireka-product-grid .aq-product-title a {
+    display: block !important;
+    width: 100% !important;
+    color: #2B2B2B !important;
+    text-align: left !important;
+    font-family: 'Baloo 2', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Price */
+.elt-arrival-area .imajireka-product-grid .aq-product-price {
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: left !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+}
+
+.elt-arrival-area .imajireka-product-grid .aq-product-new-price {
+    color: #F7931E !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    font-weight: 600 !important;
+}
+
+.elt-arrival-area .imajireka-product-grid .aq-product-old-price {
+    color: #777 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .elt-arrival-area .imajireka-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 18px !important;
+    }
+
+    .elt-arrival-area .imajireka-product-grid .aq-product-thumb {
+        height: 230px !important;
+        min-height: 230px !important;
+        flex-basis: 230px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .elt-arrival-area .imajireka-product-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .elt-arrival-area .imajireka-product-grid .aq-product-thumb {
+        height: 240px !important;
+        min-height: 240px !important;
+        flex-basis: 240px !important;
+    }
+
+    .elt-arrival-area .imajireka-product-grid .imajireka-product-content {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}

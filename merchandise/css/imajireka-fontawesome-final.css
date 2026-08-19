@@ -1,0 +1,29 @@
+
+/* =========================================================
+   Font Awesome local fix
+   main.css contains generic "i { font-family: ... }" rules.
+   This selector must override them for Font Awesome icons.
+   ========================================================= */
+
+.aq-footer-contact-item i.fa-solid,
+.aq-footer-contact-item i.fa-envelope,
+.aq-footer-contact-item i.fa-solid.fa-envelope {
+    font-family: "Font Awesome 6 Pro" !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    display: inline-block !important;
+    width: auto !important;
+    height: auto !important;
+    color: inherit !important;
+    transform: none !important;
+    margin-inline-end: 10px !important;
+    vertical-align: middle !important;
+    speak: never;
+}
+
+.aq-footer-contact-item i.fa-envelope::before {
+    content: "\f0e0" !important;
+}

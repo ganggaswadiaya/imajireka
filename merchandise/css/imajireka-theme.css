@@ -1,0 +1,629 @@
+/* =========================================================
+   IMAJIREKA BRAND THEME
+   Applied to the vanilla merchandise storefront.
+   Keeps the original e-commerce structure/functionality,
+   while aligning typography, palette, shape and UI language
+   with the Imajireka landing page.
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --im-orange: #f7931e;
+  --im-orange-dark: #e88412;
+  --im-orange-light: #f6aa4b;
+  --im-yellow: #ffd65a;
+  --im-yellow-orange: #ffb52e;
+  --im-blue: #5eb0d5;
+  --im-red: #f05a5d;
+
+  --im-cream: #fff8ef;
+  --im-cream-section: #f8f3eb;
+  --im-cream-mid: #ffe8c8;
+  --im-cream-card: #ffe5c5;
+
+  --im-dark: #2b2b2b;
+  --im-dark-soft: #2d2d2d;
+  --im-text: #666666;
+  --im-muted: #8c8c8c;
+  --im-border: #cfcfcf;
+  --im-white: #ffffff;
+
+  --im-body: "Poppins", sans-serif;
+  --im-heading: "Baloo 2", sans-serif;
+  --im-display: "Outfit", sans-serif;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--im-cream) !important;
+  color: var(--im-dark) !important;
+  font-family: var(--im-body) !important;
+}
+
+body,
+button,
+input,
+textarea,
+select,
+option {
+  font-family: var(--im-body) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.aq-section-title,
+.aq-breadcrumb-title,
+.aq-footer-widget-title,
+.aq-product-details-title,
+.aq-product-title,
+.aq-product-main-title,
+.aq-header-menu,
+.aq-offcanvas-menu {
+  font-family: var(--im-heading) !important;
+  color: var(--im-dark);
+}
+
+p,
+span,
+li,
+label,
+input,
+textarea,
+select,
+.aq-product-details-content,
+.aq-product-details-info,
+.aq-product-details-list,
+.aq-footer-widget-menu,
+.aq-footer-contact-wrap {
+  font-family: var(--im-body);
+}
+
+a {
+  color: var(--im-dark);
+}
+
+a:hover {
+  color: var(--im-orange);
+}
+
+/* ---------- Common brand colors ---------- */
+.aq-btn,
+.aq-btn-black,
+.aq-btn-primary,
+.aq-btn-theme,
+button[type="submit"],
+.aq-product-details-cart-btn,
+.aq-product-details-buy-btn,
+.aq-btn-subscribe {
+  background: var(--im-orange) !important;
+  border-color: var(--im-orange) !important;
+  color: var(--im-white) !important;
+  border-radius: 999px !important;
+}
+
+.aq-btn:hover,
+.aq-btn-black:hover,
+.aq-btn-primary:hover,
+.aq-btn-theme:hover,
+button[type="submit"]:hover,
+.aq-product-details-cart-btn:hover,
+.aq-product-details-buy-btn:hover,
+.aq-btn-subscribe:hover {
+  background: var(--im-orange-dark) !important;
+  border-color: var(--im-orange-dark) !important;
+  color: var(--im-white) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(247, 147, 30, 0.2);
+}
+
+.aq-btn-white,
+.aq-btn-border,
+.aq-btn-link {
+  color: var(--im-orange) !important;
+  border-color: var(--im-orange) !important;
+}
+
+.aq-btn-white:hover,
+.aq-btn-border:hover {
+  background: var(--im-orange) !important;
+  color: var(--im-white) !important;
+}
+
+/* ---------- Header ---------- */
+.aq-header-top-area,
+.aq-header-area,
+.aq-header-bottom-area,
+.aq-header-sticky,
+.aq-header-main-area {
+  background: var(--im-cream) !important;
+  border-color: rgba(207, 207, 207, 0.65) !important;
+}
+
+.aq-header-top-area {
+  color: var(--im-dark) !important;
+}
+
+.aq-header-top-area [data-bg-color],
+.aq-header-top-area[data-bg-color] {
+  background: var(--im-cream) !important;
+}
+
+.aq-header-logo img,
+.aq-offcanvas-logo img,
+.aq-footer-logo img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Navigation */
+.aq-header-menu > nav > ul > li > a,
+.aq-header-menu nav > ul > li > a,
+.aq-header-menu ul li a {
+  color: var(--im-dark) !important;
+  font-family: var(--im-body) !important;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.aq-header-menu nav > ul > li > a:hover,
+.aq-header-menu nav > ul > li.current-menu-item > a,
+.aq-header-menu nav > ul > li > a.active {
+  color: var(--im-orange) !important;
+}
+
+/* Header icons */
+.aq-header-right-item button,
+.aq-header-right-item a,
+.aq-header-right-item i,
+.aq-header-action-item button,
+.aq-header-action-item a {
+  color: var(--im-dark) !important;
+}
+
+.aq-header-right-item button:hover,
+.aq-header-right-item a:hover,
+.aq-header-action-item button:hover,
+.aq-header-action-item a:hover {
+  color: var(--im-orange) !important;
+}
+
+/* ---------- Announcement / promo ---------- */
+.aq-header-top-style-4 {
+  background: var(--im-orange) !important;
+  color: var(--im-white) !important;
+}
+
+.aq-header-top-style-4 a,
+.aq-header-top-style-4 span,
+.aq-header-top-style-4 p,
+.aq-header-top-style-4 button {
+  color: var(--im-white) !important;
+}
+
+/* ---------- Main sections ---------- */
+.aq-section,
+.aq-shop-area,
+.aq-product-area,
+.aq-category-area,
+.aq-banner-area,
+.aq-feature-area,
+.aq-deals-area,
+.aq-instagram-area,
+.aq-blog-area {
+  background: var(--im-cream) !important;
+}
+
+.aq-section-title,
+.aq-section-title span,
+.aq-breadcrumb-title {
+  color: var(--im-dark) !important;
+}
+
+.aq-section-title span,
+.aq-product-title a:hover,
+.aq-product-price,
+.aq-product-price span,
+.aq-product-details-price,
+.aq-product-details-price span,
+.aq-blog-title a:hover {
+  color: var(--im-orange) !important;
+}
+
+/* ---------- Breadcrumb / page title ---------- */
+.aq-breadcrumb-area,
+.breadcrumb-area {
+  background: var(--im-cream-section) !important;
+}
+
+.aq-breadcrumb-title {
+  font-size: clamp(32px, 4vw, 52px) !important;
+  font-weight: 700 !important;
+}
+
+/* ---------- Product cards ---------- */
+.aq-product-item,
+.aq-product-main,
+.aq-product-inner,
+.aq-product-thumb,
+.aq-product-content {
+  font-family: var(--im-body);
+}
+
+.aq-product-item {
+  border-radius: var(--im-radius, 12px);
+}
+
+.aq-product-thumb {
+  background: var(--im-cream-section) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.aq-product-thumb img {
+  transition: transform 0.35s ease;
+}
+
+.aq-product-item:hover .aq-product-thumb img {
+  transform: scale(1.035);
+}
+
+.aq-product-title a,
+.aq-product-main-title a {
+  color: var(--im-dark) !important;
+  font-family: var(--im-heading) !important;
+  font-weight: 600;
+}
+
+.aq-product-title a:hover,
+.aq-product-main-title a:hover {
+  color: var(--im-orange) !important;
+}
+
+.aq-product-price {
+  font-family: var(--im-body) !important;
+  font-weight: 600;
+}
+
+.aq-product-badge,
+.aq-product-tag,
+.aq-sale-badge {
+  background: var(--im-orange) !important;
+  color: var(--im-white) !important;
+  border-radius: 999px !important;
+}
+
+/* Product action buttons */
+.aq-product-action a,
+.aq-product-action button,
+.aq-product-action-item a,
+.aq-product-action-item button {
+  background: var(--im-white) !important;
+  color: var(--im-dark) !important;
+  border-color: var(--im-border) !important;
+  border-radius: 999px !important;
+}
+
+.aq-product-action a:hover,
+.aq-product-action button:hover,
+.aq-product-action-item a:hover,
+.aq-product-action-item button:hover {
+  background: var(--im-orange) !important;
+  border-color: var(--im-orange) !important;
+  color: var(--im-white) !important;
+}
+
+/* ---------- Categories ---------- */
+.aq-category-item,
+.aq-category-content {
+  border-radius: 12px !important;
+}
+
+.aq-category-item:hover .aq-category-title,
+.aq-category-title a:hover {
+  color: var(--im-orange) !important;
+}
+
+/* ---------- Form controls ---------- */
+input,
+textarea,
+select,
+.aq-form-control,
+.nice-select {
+  background: var(--im-white) !important;
+  color: var(--im-dark) !important;
+  border-color: var(--im-border) !important;
+  border-radius: 12px !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.aq-form-control:focus {
+  border-color: var(--im-orange) !important;
+  box-shadow: 0 0 0 3px rgba(247, 147, 30, 0.1) !important;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--im-muted) !important;
+}
+
+/* ---------- Search / cart / offcanvas ---------- */
+.aq-search-wrap,
+.aq-cartmini-wrap,
+.aq-offcanvas-wrap,
+.aq-mobile-menu-wrap {
+  background: var(--im-cream) !important;
+  color: var(--im-dark) !important;
+}
+
+.aq-search-cat-title,
+.aq-offcanvas-title,
+.aq-cartmini-title {
+  font-family: var(--im-heading) !important;
+  color: var(--im-dark) !important;
+}
+
+.aq-search-cat a:hover,
+.aq-offcanvas-menu a:hover,
+.aq-cartmini-product-title a:hover {
+  color: var(--im-orange) !important;
+}
+
+/* ---------- Pagination ---------- */
+.aq-pagination a,
+.aq-pagination span {
+  border-color: var(--im-border) !important;
+  color: var(--im-dark) !important;
+  border-radius: 999px !important;
+}
+
+.aq-pagination a:hover,
+.aq-pagination .current,
+.aq-pagination span.current {
+  background: var(--im-orange) !important;
+  border-color: var(--im-orange) !important;
+  color: var(--im-white) !important;
+}
+
+/* ---------- Footer ---------- */
+.aq-footer-area,
+.aq-footer,
+footer {
+  background: var(--im-dark) !important;
+  color: var(--im-white) !important;
+}
+
+.aq-footer-area [data-bg-color] {
+  background: var(--im-dark) !important;
+}
+
+.aq-footer-widget-title {
+  color: var(--im-white) !important;
+  font-size: 24px !important;
+}
+
+.aq-footer-widget-menu a,
+.aq-footer-contact-wrap a,
+.aq-footer-contact-wrap,
+.aq-footer-widget p {
+  color: #d5d5d5 !important;
+}
+
+.aq-footer-widget-menu a:hover,
+.aq-footer-contact-wrap a:hover {
+  color: var(--im-orange-light) !important;
+}
+
+.aq-footer-widget-social a {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: var(--im-white) !important;
+  border-radius: 999px !important;
+}
+
+.aq-footer-widget-social a:hover {
+  background: var(--im-orange) !important;
+}
+
+/* ---------- Modal / popup ---------- */
+.modal-content,
+.aq-modal-content,
+.aq-product-modal-content {
+  background: var(--im-cream) !important;
+  border-radius: 24px !important;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--im-border) !important;
+}
+
+/* ---------- Quantity / wishlist / count ---------- */
+.count-box,
+.aq-header-count,
+.aq-cart-count,
+.aq-wishlist-count {
+  background: var(--im-orange) !important;
+  color: var(--im-white) !important;
+}
+
+/* ---------- Back to top ---------- */
+.progress-wrap {
+  background: var(--im-white) !important;
+  border-color: var(--im-orange) !important;
+  color: var(--im-orange) !important;
+}
+
+.progress-wrap::after {
+  color: var(--im-orange) !important;
+}
+
+/* ---------- Preloader ---------- */
+#loading {
+  background: var(--im-cream) !important;
+}
+
+.aq-preloader-title {
+  font-family: var(--im-heading) !important;
+  color: var(--im-dark) !important;
+}
+
+.aq-preloader-subtitle {
+  color: var(--im-muted) !important;
+}
+
+.aq-preloader-circle circle:nth-child(2) {
+  stroke: var(--im-orange) !important;
+}
+
+/* ---------- Responsive brand sizing ---------- */
+@media (max-width: 1199px) {
+  .aq-header-logo img,
+  .aq-offcanvas-logo img,
+  .aq-footer-logo img {
+    width: 108px;
+  }
+}
+
+@media (max-width: 767px) {
+  .aq-header-logo img,
+  .aq-offcanvas-logo img,
+  .aq-footer-logo img {
+    width: 100px;
+  }
+
+  .aq-breadcrumb-title {
+    font-size: 34px !important;
+  }
+}
+
+/* =========================================================
+   IMAJIREKA — Popular Categories
+   ========================================================= */
+.imajireka-popular-categories {
+  padding: 72px 0 78px;
+  background: #fff8ef;
+}
+
+.imajireka-popular-categories-heading {
+  margin-bottom: 42px;
+}
+
+.imajireka-popular-categories-heading h2 {
+  margin: 0 0 10px;
+  color: #2b2b2b;
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.imajireka-popular-categories-heading p {
+  margin: 0 auto;
+  max-width: 620px;
+  color: #666666;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.imajireka-category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.imajireka-category-card {
+  min-height: 190px;
+  padding: 30px 20px 26px;
+  border: 1px solid rgba(43, 43, 43, 0.08);
+  border-radius: 24px;
+  /* background: #FFFFFF; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.imajireka-category-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(247, 147, 30, 0.28);
+  box-shadow: 0 12px 30px rgba(43, 43, 43, 0.08);
+}
+
+.imajireka-category-icon {
+  width: 88px;
+  height: 88px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #ffe5c5;
+  color: #f7931e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.imajireka-category-card:hover .imajireka-category-icon {
+  background: #f7931e;
+  color: #ffffff;
+  transform: scale(1.04);
+}
+
+.imajireka-category-name {
+  color: #2b2b2b;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (max-width: 991px) {
+  .imajireka-popular-categories {
+    padding: 60px 0 65px;
+  }
+
+  .imajireka-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .imajireka-popular-categories {
+    padding: 50px 0 55px;
+  }
+
+  .imajireka-popular-categories-heading {
+    margin-bottom: 30px;
+  }
+
+  .imajireka-category-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .imajireka-category-card {
+    min-height: 160px;
+  }
+}

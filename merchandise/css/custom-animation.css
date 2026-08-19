@@ -71,8 +71,3 @@
   -webkit-animation-name: fadeOutDown;
   animation-name: fadeOutDown;
 }
-
-/* Imajireka - compare action disabled */
-.aq-product-action .aq-compare-btn {
-  display: none !important;
-}

@@ -1,0 +1,9 @@
+
+/* Hide product color choices */
+.elt-arrival-area .imajireka-product-grid .aq-product-color,
+.elt-arrival-area .imajireka-product-grid .product-color,
+.elt-arrival-area .imajireka-product-grid [class*="product-color"],
+.elt-arrival-area .imajireka-product-grid [class*="color-swatch"],
+.elt-arrival-area .imajireka-product-grid [class*="color-option"] {
+    display: none !important;
+}

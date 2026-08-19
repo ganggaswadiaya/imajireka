@@ -1,0 +1,81 @@
+
+/* Imajireka - Our Product layout */
+.our-product-grid,
+.new-arrivals-grid,
+.tp-product-slider-active,
+.product-grid,
+.products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 28px !important;
+}
+
+/* Keep product cards aligned in a 4-column grid */
+.our-product-grid > *,
+.new-arrivals-grid > *,
+.product-grid > *,
+.products-grid > * {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Product card typography: left aligned */
+.our-product-grid .product-content,
+.our-product-grid .product__content,
+.new-arrivals-grid .product-content,
+.new-arrivals-grid .product__content,
+.product-grid .product-content,
+.product-grid .product__content,
+.products-grid .product-content,
+.products-grid .product__content {
+    text-align: left !important;
+}
+
+/* Common product-card text elements */
+.our-product-grid .product-title,
+.our-product-grid .product-name,
+.our-product-grid .product__title,
+.new-arrivals-grid .product-title,
+.new-arrivals-grid .product-name,
+.new-arrivals-grid .product__title,
+.product-grid .product-title,
+.product-grid .product-name,
+.product-grid .product__title,
+.products-grid .product-title,
+.products-grid .product-name,
+.products-grid .product__title {
+    text-align: left !important;
+}
+
+/* Left-align prices, colors, badges and metadata where the template uses flex */
+.our-product-grid .product-price,
+.our-product-grid .product__price,
+.new-arrivals-grid .product-price,
+.new-arrivals-grid .product__price,
+.product-grid .product-price,
+.product-grid .product__price,
+.products-grid .product-price,
+.products-grid .product__price {
+    text-align: left !important;
+    justify-content: flex-start !important;
+}
+
+@media (max-width: 991px) {
+    .our-product-grid,
+    .new-arrivals-grid,
+    .tp-product-slider-active,
+    .product-grid,
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .our-product-grid,
+    .new-arrivals-grid,
+    .tp-product-slider-active,
+    .product-grid,
+    .products-grid {
+        grid-template-columns: 1fr !important;
+    }
+}

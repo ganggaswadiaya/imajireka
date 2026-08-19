@@ -1,0 +1,8 @@
+
+/* Imajireka footer - remove subscribe column */
+footer .footer-subscribe,
+footer .subscribe,
+footer [class*="subscribe"],
+footer [class*="newsletter"] {
+    display: none !important;
+}
