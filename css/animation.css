@@ -1,0 +1,87 @@
+/* =========================================================
+   IMAJIREKA - ANIMATIONS
+========================================================= */
+
+@keyframes orbitRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+@keyframes processPath {
+
+    from {
+
+        stroke-dashoffset: 0;
+
+    }
+
+    to {
+
+        stroke-dashoffset: -28;
+
+    }
+
+}
+
+@keyframes testimonialScroll {
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+    to {
+
+        transform: translateX(
+            calc(-50% - 12px)
+        );
+
+    }
+
+}
+
+/* =========================================================
+   SCROLL REVEAL
+   Dipakai untuk konten yang muncul ketika masuk viewport.
+========================================================= */
+
+.scroll-reveal {
+    opacity: 0;
+    translate: 0 32px;
+    transition:
+        opacity 0.75s ease,
+        translate 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, translate;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+/* Stagger kecil untuk item yang muncul berurutan */
+.scroll-reveal[data-delay="1"] { transition-delay: 0.08s; }
+.scroll-reveal[data-delay="2"] { transition-delay: 0.16s; }
+.scroll-reveal[data-delay="3"] { transition-delay: 0.24s; }
+.scroll-reveal[data-delay="4"] { transition-delay: 0.32s; }
+.scroll-reveal[data-delay="5"] { transition-delay: 0.40s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
+}

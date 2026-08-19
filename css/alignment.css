@@ -1,0 +1,155 @@
+/* =========================================================
+   IMAJIREKA - CONSISTENT SECTION ALIGNMENT
+   Tujuan: menyamakan garis kiri/kanan seluruh section dengan
+   garis konten navbar tanpa mengubah desain atau layout isi.
+
+   Section berbentuk "card" berwarna (process, contact) perlu
+   formula lebar khusus: LEBAR LUAR card-nya sendiri yang harus
+   dikurangi agar tepi card sejajar dengan navbar, bukan cuma
+   padding konten di dalamnya (kalau cuma padding, background
+   card akan tetap bocor sampai tepi layar).
+========================================================= */
+
+@media (min-width: 1200px) {
+  /* Satu sistem lebar konten untuk seluruh halaman. */
+  .container {
+    width: min(100%, var(--container-width));
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+    box-sizing: border-box;
+  }
+
+  /* Navbar menjadi acuan utama garis kiri/kanan. */
+  .navbar.container {
+    padding-block: 1rem;
+  }
+
+  /* Section wrapper tidak lagi menambah padding horizontal sendiri.
+     Padding horizontal ditangani oleh .container. */
+  .hero.container {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: var(--container-padding);
+  }
+
+  .about-container.container,
+  .services-container.container,
+  .portfolio-container.container {
+    padding-top: var(--container-padding);
+    padding-bottom: var(--container-padding);
+  }
+
+  .about-container.container,
+  .services-container.container,
+  .portfolio-container.container {
+    /* Hanya horizontal alignment yang diseragamkan. */
+  }
+
+  .why-section,
+  .creative-process,
+  .testimonial-section,
+  .faq-section,
+  .contact-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .why-container.container,
+  .process-container.container,
+  .testimonial-container.container,
+  .faq-container.container,
+  .contact-container.container,
+  .footer-container.container {
+    box-sizing: border-box;
+  }
+
+  /* Process: kartu kuning butuh lebar LUAR yang dikurangi (bukan
+     cuma padding), supaya tepi background-nya sejajar dengan
+     navbar, bukan melebar sampai batas 1440px. Padding internal
+     60/50/70 tetap dipertahankan agar spacing isi kartu tidak
+     berubah. */
+  .process-container.container {
+    width: min(
+      calc(100% - (2 * var(--container-padding))),
+      calc(var(--container-width) - (2 * var(--container-padding)))
+    );
+    max-width: none;
+    margin-inline: auto;
+    padding-top: 60px;
+    padding-right: 50px;
+    padding-bottom: 70px;
+    padding-left: 50px;
+  }
+
+  /* Contact & footer menggunakan sistem container yang sama,
+     bukan width 1180px yang terpisah dari navbar. */
+  .contact-container.container {
+    width: min(100%, var(--container-width));
+    max-width: var(--container-width);
+    margin-inline: auto;
+  }
+
+  .footer-container.container {
+    width: min(100%, var(--container-width));
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-top: 62px;
+    padding-right: var(--container-padding);
+    padding-bottom: 48px;
+    padding-left: var(--container-padding);
+  }
+}
+
+/* =========================================================
+   TABLET (768px - 1199px)
+   Section responsive.css sudah punya sistem lebar tablet
+   sendiri (--tablet-container-width / max-width 1100px) yang
+   dipakai navbar & sebagian besar section. Contact card dan
+   footer masih memakai rumus lebar lama (1180px / 8rem) yang
+   tidak nyambung dengan sistem itu, jadi disamakan di sini.
+========================================================= */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .process-container.container {
+    width: min(
+      calc(100% - (2 * var(--tablet-side-space))),
+      calc(1100px - (2 * var(--tablet-side-space)))
+    );
+    max-width: none;
+    margin-inline: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .contact-card.container {
+    width: min(
+      calc(100% - (2 * var(--tablet-side-space))),
+      calc(1100px - (2 * var(--tablet-side-space)))
+    );
+    max-width: none;
+    margin-inline: auto;
+  }
+
+  .footer-container.container {
+    width: var(--tablet-container-width);
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-left: var(--tablet-side-space);
+    padding-right: var(--tablet-side-space);
+  }
+}
+
+/* =========================================================
+   CONTACT - ALIGN ORANGE CARD WITH NAVBAR CONTENT
+   The orange contact card follows the same left/right content
+   edges as the navbar. Only the Contact card is affected.
+========================================================= */
+@media (min-width: 1200px) {
+  .contact-card.container {
+    width: min(calc(100% - (2 * var(--container-padding))), calc(var(--container-width) - (2 * var(--container-padding))));
+    max-width: none;
+    margin-inline: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

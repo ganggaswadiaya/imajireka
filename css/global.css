@@ -1,0 +1,166 @@
+/* =========================================================
+   IMAJIREKA - GLOBAL STYLES
+   Shared tokens, reset, typography and reusable layout.
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+    /* Colors */
+    --color-orange: #F7931E;
+    --color-orange-dark: #E88412;
+    --color-orange-light: #F6AA4B;
+    --color-yellow: #FFD65A;
+    --color-yellow-orange: #FFB52E;
+    --color-blue: #5EB0D5;
+    --color-red: #F05A5D;
+
+    --color-cream: #FFF8EF;
+    --color-cream-section: #F8F3EB;
+    --color-cream-mid: #FFE8C8;
+    --color-cream-card: #FFE5C5;
+
+    --color-dark: #2B2B2B;
+    --color-dark-soft: #2D2D2D;
+    --color-text: #666666;
+    --color-muted: #8C8C8C;
+    --color-border: #CFCFCF;
+    --color-gray-light: #F3F3F3;
+    --color-white: #FFFFFF;
+    --color-footer-text: #D5D5D5;
+    --color-footer-link: #D0D0D0;
+
+    /* Typography */
+    --font-body: 'Poppins', sans-serif;
+    --font-heading: 'Baloo 2', sans-serif;
+    --font-display: 'Outfit', sans-serif;
+
+    /* Layout */
+    --container-width: 1440px;
+    --container-padding: 5rem;
+
+    /* Shape */
+    --radius-sm: 5px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    --radius-pill: 999px;
+
+    /* Motion */
+    --transition-fast: 0.2s ease;
+    --transition: 0.3s ease;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-cream);
+    color: var(--color-dark);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+
+    /* Ruang untuk navbar fixed agar layout tidak tertutup navbar. */
+    padding-top: 78px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Shared desktop alignment. Section-specific wrappers keep their
+   own vertical/padding rules, while this class owns the max width. */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin-inline: auto;
+}
+
+/* Shared small pill label used throughout the design. */
+.btnTitle {
+    margin-bottom: 1rem;
+}
+
+.btnTitle h3 {
+    display: inline-block;
+    margin: 0;
+    padding: 8px 16px;
+    background: var(--color-white);
+    border-radius: var(--radius-pill);
+    color: var(--color-orange);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1;
+    box-shadow: 0 4px 12px rgba(212, 176, 138, 0.18);
+}
+
+/* Shared paragraph wrapper. */
+.paragraf p {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-text);
+}
+
+/* Shared orange/outline button primitives. Existing markup can keep
+   its current .btnOrange / .btnBorder classes. */
+.btnOrange a,
+.btnBorder a {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+    transition: var(--transition);
+}
+
+
+
+/* =========================================================
+   SHARED LAYOUT HELPERS
+========================================================= */
+
+.section-padding {
+    padding-block: var(--container-padding);
+}
+
+.rounded {
+    border-radius: var(--radius-lg);
+}
+
+.pill {
+    border-radius: var(--radius-pill);
+}
+
+.text-orange {
+    color: var(--color-orange);
+}
+
+.bg-orange {
+    background: var(--color-orange);
+}
+
+.bg-cream {
+    background: var(--color-cream);
+}
