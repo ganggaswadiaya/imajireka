@@ -70,23 +70,25 @@ function restartAutoplay() {
   autoplayTimer = setInterval(nextSlide, 5000);
 }
 
-// Event listeners
-nextBtn.addEventListener("click", nextSlide);
-prevBtn.addEventListener("click", prevSlide);
+// Event listeners — hanya dijalankan ketika halaman memiliki hero slider.
+if (nextBtn && prevBtn && eyebrowEl && titleEl && priceEl && heroWatch) {
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
 
-dots.forEach((dot) => {
-  dot.addEventListener("click", () => {
-    goToSlide(parseInt(dot.dataset.slide, 10));
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      goToSlide(parseInt(dot.dataset.slide, 10));
+    });
   });
-});
 
-// Transisi halus untuk elemen teks & watch
-[eyebrowEl, titleEl, priceEl, heroWatch].forEach((el) => {
-  el.style.transition = "opacity 0.2s ease";
-});
+  // Transisi halus untuk elemen teks & watch
+  [eyebrowEl, titleEl, priceEl, heroWatch].forEach((el) => {
+    el.style.transition = "opacity 0.2s ease";
+  });
 
-// Mulai autoplay saat halaman siap
-restartAutoplay();
+  // Mulai autoplay hanya di halaman home.
+  restartAutoplay();
+}
 
 // ===== Tahun footer otomatis =====
 const footerYear = document.getElementById("footer-year");
@@ -1720,7 +1722,11 @@ function setActiveNav(sectionId) {
   });
 }
 
-if (navLinks.length && navSections.length) {
+if (
+  navLinks.length &&
+  navSections.length &&
+  !document.body.classList.contains("all-products-page")
+) {
   const navObserver = new IntersectionObserver(
     (entries) => {
       const visibleSections = entries

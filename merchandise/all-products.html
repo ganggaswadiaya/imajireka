@@ -1,0 +1,1143 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>All Products — Imajireka Merchandise</title>
+    <meta
+      content="Explore all Imajireka merchandise, from illustrated apparel and tote bags to posters, stickers, accessories, and more."
+      name="description"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Poppins:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/font-awesome-pro.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/all-products.css" rel="stylesheet" />
+  </head>
+  <body class="all-products-page">
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="#">
+          <img alt="" height="30px" src="assets/imajireka-logo.svg" />
+        </a>
+        <nav class="main-nav">
+          <a class="nav-link" data-nav-section="hero" href="index.html#hero"
+            >Home</a
+          >
+          <a
+            class="nav-link active"
+            data-nav-section="products"
+            href="index.html#products"
+            >Products</a
+          >
+        </nav>
+        <div class="header-icons">
+          <button
+            aria-controls="search-modal"
+            aria-expanded="false"
+            aria-label="Cari"
+            class="icon-btn"
+            id="search-btn"
+            type="button"
+          >
+            <i class="fa-regular fa-magnifying-glass"></i>
+          </button>
+          <button
+            aria-controls="login-modal"
+            aria-expanded="false"
+            aria-label="Akun"
+            class="icon-btn"
+            id="account-btn"
+            type="button"
+          >
+            <i class="fa-regular fa-user"></i>
+          </button>
+          <button
+            aria-controls="wishlist-modal"
+            aria-expanded="false"
+            aria-label="Wishlist"
+            class="icon-btn"
+            id="wishlist-btn"
+            type="button"
+          >
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge" id="wishlist-badge">3</span>
+          </button>
+          <button
+            aria-controls="cart-modal"
+            aria-expanded="false"
+            aria-label="Keranjang"
+            class="icon-btn"
+            id="cart-btn"
+            type="button"
+          >
+            <i class="fa-regular fa-bag-shopping"></i>
+            <span class="badge" id="cart-badge">3</span>
+          </button>
+        </div>
+        <button aria-label="Buka menu" class="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <!-- ===================== TABLET MENU ===================== -->
+        <div
+          aria-hidden="true"
+          class="tablet-menu-panel"
+          id="tablet-menu-panel"
+        >
+          <a
+            class="tablet-menu-link"
+            data-nav-section="hero"
+            href="index.html#hero"
+          >
+            <i class="fa-regular fa-house"></i>
+            <span>Home</span>
+          </a>
+          <a
+            class="tablet-menu-link active"
+            data-nav-section="products"
+            href="index.html#products"
+          >
+            <i class="fa-regular fa-grid-2"></i>
+            <span>Products</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <nav aria-label="Navigasi mobile" class="mobile-bottom-nav">
+      <a
+        aria-label="Home"
+        class="mobile-nav-link active"
+        data-nav-section="hero"
+        href="index.html#hero"
+      >
+        <i class="fa-regular fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a
+        aria-label="Products"
+        class="mobile-nav-link active"
+        data-nav-section="products"
+        href="index.html#products"
+      >
+        <i class="fa-regular fa-grid-2"></i>
+        <span>Products</span>
+      </a>
+      <button
+        aria-label="Wishlist"
+        class="mobile-nav-link mobile-nav-action"
+        data-mobile-action="wishlist"
+        type="button"
+      >
+        <span class="mobile-nav-icon">
+          <i class="fa-regular fa-heart"></i>
+          <span class="mobile-nav-badge" id="mobile-wishlist-badge">3</span>
+        </span>
+        <span>Wishlist</span>
+      </button>
+      <button
+        aria-label="Account"
+        class="mobile-nav-link mobile-nav-action"
+        data-mobile-action="account"
+        type="button"
+      >
+        <i class="fa-regular fa-user"></i>
+        <span>Account</span>
+      </button>
+    </nav>
+    <div aria-hidden="true" class="login-modal" id="login-modal">
+      <div class="login-overlay" data-close-login=""></div>
+      <div
+        aria-labelledby="login-title"
+        aria-modal="true"
+        class="login-card"
+        role="dialog"
+      >
+        <button
+          aria-label="Tutup"
+          class="login-close"
+          id="login-close"
+          type="button"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <!-- ===================== LOGIN VIEW ===================== -->
+        <div
+          class="account-view account-login-view active"
+          id="account-login-view"
+        >
+          <div class="login-header">
+            <img
+              alt="Imajireka"
+              class="login-logo"
+              src="assets/imajireka-logo.svg"
+            />
+            <h2 id="login-title">Sign in to Imajireka.</h2>
+            <p>Please enter your details below to sign in.</p>
+          </div>
+          <form class="login-form" id="login-form">
+            <div class="form-group">
+              <label for="login-email">Your Email <span>*</span></label>
+              <input
+                autocomplete="email"
+                id="login-email"
+                name="email"
+                placeholder="email@address.com"
+                required=""
+                type="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password <span>*</span></label>
+              <div class="password-wrapper">
+                <input
+                  autocomplete="current-password"
+                  id="login-password"
+                  minlength="6"
+                  name="password"
+                  placeholder="6+ characters required"
+                  required=""
+                  type="password"
+                />
+                <button
+                  aria-label="Tampilkan password"
+                  class="password-toggle"
+                  id="password-toggle"
+                  type="button"
+                >
+                  <i class="fa-regular fa-eye-slash"></i>
+                </button>
+              </div>
+            </div>
+            <div class="login-options">
+              <label class="remember-me">
+                <input id="remember-me" type="checkbox" />
+                <span class="custom-checkbox"></span>
+                <span>Remember me</span>
+              </label>
+              <button
+                class="forgot-password"
+                id="forgot-password"
+                type="button"
+              >
+                Forgot Password?
+              </button>
+            </div>
+            <button class="login-submit" type="submit">Login</button>
+            <button class="create-account" id="create-account" type="button">
+              Create Account
+            </button>
+          </form>
+          <div class="login-divider">
+            <span></span>
+            <p>Or continue with</p>
+            <span></span>
+          </div>
+          <div class="social-login">
+            <button
+              aria-label="Login dengan Google"
+              class="social-btn"
+              data-provider="Google"
+              type="button"
+            >
+              <i class="fa-brands fa-google"></i>
+            </button>
+            <button
+              aria-label="Login dengan Apple"
+              class="social-btn"
+              data-provider="Apple"
+              type="button"
+            >
+              <i class="fa-brands fa-apple"></i>
+            </button>
+            <button
+              aria-label="Login dengan Facebook"
+              class="social-btn"
+              data-provider="Facebook"
+              type="button"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </button>
+            <button
+              aria-label="Login dengan X"
+              class="social-btn"
+              data-provider="X"
+              type="button"
+            >
+              <i class="fa-brands fa-x-twitter"></i>
+            </button>
+          </div>
+        </div>
+        <!-- ===================== REGISTER VIEW ===================== -->
+        <div
+          class="account-view account-register-view"
+          hidden=""
+          id="account-register-view"
+        >
+          <div class="login-header">
+            <img
+              alt="Imajireka"
+              class="login-logo"
+              src="assets/imajireka-logo.svg"
+            />
+            <h2>Create your Imajireka account.</h2>
+            <p>Join Imajireka and make your shopping experience better.</p>
+          </div>
+          <form class="login-form register-form" id="register-form">
+            <div class="form-group">
+              <label for="register-name">Full Name <span>*</span></label>
+              <input
+                autocomplete="name"
+                id="register-name"
+                name="name"
+                placeholder="Your full name"
+                required=""
+                type="text"
+              />
+            </div>
+            <div class="form-group">
+              <label for="register-email">Your Email <span>*</span></label>
+              <input
+                autocomplete="email"
+                id="register-email"
+                name="email"
+                placeholder="email@address.com"
+                required=""
+                type="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="register-password">Password <span>*</span></label>
+              <div class="password-wrapper">
+                <input
+                  autocomplete="new-password"
+                  id="register-password"
+                  minlength="6"
+                  name="password"
+                  placeholder="6+ characters required"
+                  required=""
+                  type="password"
+                />
+                <button
+                  aria-label="Tampilkan password"
+                  class="password-toggle register-password-toggle"
+                  data-target="register-password"
+                  type="button"
+                >
+                  <i class="fa-regular fa-eye-slash"></i>
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="register-confirm-password"
+                >Confirm Password <span>*</span></label
+              >
+              <div class="password-wrapper">
+                <input
+                  autocomplete="new-password"
+                  id="register-confirm-password"
+                  minlength="6"
+                  name="confirm-password"
+                  placeholder="Repeat your password"
+                  required=""
+                  type="password"
+                />
+                <button
+                  aria-label="Tampilkan password"
+                  class="password-toggle register-password-toggle"
+                  data-target="register-confirm-password"
+                  type="button"
+                >
+                  <i class="fa-regular fa-eye-slash"></i>
+                </button>
+              </div>
+            </div>
+            <label class="terms-checkbox">
+              <input id="register-terms" required="" type="checkbox" />
+              <span class="custom-checkbox"></span>
+              <span>
+                I agree to Imajireka's
+                <a class="terms-link" href="#">Terms &amp; Conditions</a>
+                and
+                <a class="terms-link" href="#">Privacy Policy</a>.
+              </span>
+            </label>
+            <button class="login-submit" type="submit">Create Account</button>
+            <button class="back-to-login" id="back-to-login" type="button">
+              <i class="fa-solid fa-arrow-left"></i>
+              Back to Login
+            </button>
+          </form>
+          <div class="login-divider">
+            <span></span>
+            <p>Or sign up with</p>
+            <span></span>
+          </div>
+          <div class="social-login">
+            <button
+              aria-label="Daftar dengan Google"
+              class="social-btn"
+              data-provider="Google"
+              type="button"
+            >
+              <i class="fa-brands fa-google"></i>
+            </button>
+            <button
+              aria-label="Daftar dengan Apple"
+              class="social-btn"
+              data-provider="Apple"
+              type="button"
+            >
+              <i class="fa-brands fa-apple"></i>
+            </button>
+            <button
+              aria-label="Daftar dengan Facebook"
+              class="social-btn"
+              data-provider="Facebook"
+              type="button"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </button>
+            <button
+              aria-label="Daftar dengan X"
+              class="social-btn"
+              data-provider="X"
+              type="button"
+            >
+              <i class="fa-brands fa-x-twitter"></i>
+            </button>
+          </div>
+        </div>
+        <p aria-live="polite" class="login-message" id="login-message"></p>
+      </div>
+    </div>
+    <div aria-hidden="true" class="wishlist-modal" id="wishlist-modal">
+      <div class="wishlist-overlay" data-close-wishlist=""></div>
+      <div
+        aria-labelledby="wishlist-title"
+        aria-modal="true"
+        class="wishlist-card"
+        role="dialog"
+      >
+        <button
+          aria-label="Tutup wishlist"
+          class="wishlist-close"
+          id="wishlist-close"
+          type="button"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="wishlist-header">
+          <div>
+            <span class="wishlist-eyebrow">Imajireka Collection</span>
+            <h2 id="wishlist-title">My Wishlist</h2>
+          </div>
+          <span class="wishlist-count" id="wishlist-count">3 Items</span>
+        </div>
+        <div class="wishlist-table-head">
+          <span></span>
+          <span>Product Name</span>
+          <span>Unit Price</span>
+          <span>Stock Status</span>
+          <span>Actions</span>
+        </div>
+        <div class="wishlist-list" id="wishlist-list"></div>
+        <div class="wishlist-empty" hidden="" id="wishlist-empty">
+          <div class="wishlist-empty-icon">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <h3>Your wishlist is empty</h3>
+          <p>Save the products you love and find them here later.</p>
+          <button class="wishlist-shop" id="wishlist-shop" type="button">
+            Explore Products
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="wishlist-footer">
+          <button
+            class="wishlist-continue"
+            id="wishlist-continue"
+            type="button"
+          >
+            Continue Shopping
+          </button>
+          <p>Keep your favorite Imajireka products close.</p>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" class="cart-modal" id="cart-modal">
+      <div class="cart-overlay" data-close-cart=""></div>
+      <div
+        aria-labelledby="cart-title"
+        aria-modal="true"
+        class="cart-card"
+        role="dialog"
+      >
+        <button
+          aria-label="Tutup keranjang"
+          class="cart-close"
+          id="cart-close"
+          type="button"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="cart-header">
+          <div>
+            <span class="cart-eyebrow">Imajireka Collection</span>
+            <h2 id="cart-title">Your Cart</h2>
+          </div>
+          <span class="cart-count" id="cart-count">3 Items</span>
+        </div>
+        <div class="cart-layout">
+          <div class="cart-items-panel">
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-empty" hidden="" id="cart-empty">
+              <div class="cart-empty-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <h3>Your cart is empty</h3>
+              <p>
+                Discover your next favorite Imajireka product and add it to your
+                cart.
+              </p>
+              <button class="cart-shop" id="cart-shop" type="button">
+                Explore Products
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <aside class="cart-summary">
+            <div class="cart-summary-head">
+              <span class="cart-summary-eyebrow">Imajireka</span>
+              <h3>Order Summary</h3>
+            </div>
+            <div class="cart-summary-row">
+              <span>Subtotal</span>
+              <strong id="cart-subtotal">$0.00</strong>
+            </div>
+            <div class="cart-summary-row cart-discount-row">
+              <span>Discount <small id="cart-discount-label">(0%)</small></span>
+              <strong id="cart-discount">-$0.00</strong>
+            </div>
+            <div class="cart-summary-row">
+              <span>Delivery Fee</span>
+              <strong id="cart-delivery">$15.00</strong>
+            </div>
+            <div class="cart-summary-total">
+              <span>Total</span>
+              <strong id="cart-total">$0.00</strong>
+            </div>
+            <div class="cart-promo">
+              <div class="cart-promo-input">
+                <i class="fa-solid fa-tag"></i>
+                <input
+                  autocomplete="off"
+                  id="cart-promo-code"
+                  placeholder="Add promo code"
+                  type="text"
+                />
+              </div>
+              <button id="cart-promo-apply" type="button">Apply</button>
+            </div>
+            <p class="cart-promo-message" id="cart-promo-message"></p>
+            <button class="cart-checkout" id="cart-checkout" type="button">
+              Go to Checkout
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </aside>
+        </div>
+        <div class="cart-footer">
+          <button class="cart-continue" id="cart-continue" type="button">
+            Continue Shopping
+          </button>
+          <p>Secure checkout · Imajireka Merchandise</p>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" class="product-modal" id="product-modal">
+      <div class="product-overlay" data-close-product=""></div>
+      <div
+        aria-labelledby="product-modal-title"
+        aria-modal="true"
+        class="product-modal-card"
+        role="dialog"
+      >
+        <button
+          aria-label="Tutup detail produk"
+          class="product-modal-close"
+          id="product-modal-close"
+          type="button"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="product-modal-grid">
+          <div class="product-modal-visual">
+            <span class="product-modal-badge" id="product-modal-badge"
+              >New</span
+            >
+            <div class="product-zoom-area" id="product-zoom-area">
+              <div class="product-zoom-image" id="product-zoom-image">
+                <i class="fa-solid fa-keyboard" id="product-modal-icon"></i>
+              </div>
+              <span class="product-zoom-hint">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                Hover to zoom
+              </span>
+            </div>
+          </div>
+          <div class="product-modal-content">
+            <span class="product-modal-category" id="product-modal-category"
+              >Imajireka Collection</span
+            >
+            <h2 id="product-modal-title">Magic Keyboard for iPad Air</h2>
+            <div class="product-modal-meta">
+              <div class="product-rating" id="product-modal-rating">
+                <span class="rating-stars">★★★★★</span>
+                <span id="product-review-count">(12 reviews)</span>
+              </div>
+              <div class="product-sold">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+                <span id="product-sold-count">41 sold in last 16 hours</span>
+              </div>
+            </div>
+            <div class="product-modal-price">
+              <strong id="product-modal-price">$260.00</strong>
+              <del id="product-modal-old-price">$280.00</del>
+            </div>
+            <div class="product-option">
+              <div class="product-option-head">
+                <span>Size:</span>
+                <strong id="product-selected-size">Standard</strong>
+              </div>
+              <div class="product-size-list" id="product-size-list"></div>
+            </div>
+            <div class="product-option">
+              <div class="product-option-head">
+                <span>Color:</span>
+                <strong id="product-selected-color">Original</strong>
+              </div>
+              <div class="product-color-list" id="product-color-list"></div>
+            </div>
+            <div class="product-modal-actions">
+              <div class="product-quantity">
+                <button
+                  aria-label="Kurangi jumlah"
+                  id="product-quantity-minus"
+                  type="button"
+                >
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <span id="product-quantity">1</span>
+                <button
+                  aria-label="Tambah jumlah"
+                  id="product-quantity-plus"
+                  type="button"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+              <button
+                class="product-add-cart"
+                id="product-add-cart"
+                type="button"
+              >
+                ADD TO CART
+              </button>
+              <button
+                aria-label="Tambah ke wishlist"
+                class="product-action-circle"
+                id="product-wishlist-toggle"
+                type="button"
+              >
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <button class="product-buy-now" id="product-buy-now" type="button">
+              BUY NOW
+            </button>
+            <button
+              class="product-details-link"
+              id="product-details-link"
+              type="button"
+            >
+              View Full Details
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <p class="product-modal-message" id="product-modal-message"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" class="search-modal" id="search-modal">
+      <div class="search-overlay" data-close-search=""></div>
+      <div
+        aria-labelledby="search-title"
+        aria-modal="true"
+        class="search-card"
+        role="dialog"
+      >
+        <button
+          aria-label="Tutup pencarian"
+          class="search-close"
+          id="search-close"
+          type="button"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="search-header">
+          <span class="search-eyebrow">IMAJIREKA SEARCH</span>
+          <h2 id="search-title">What are you looking for?</h2>
+          <p>Find your favorite products from the Imajireka collection.</p>
+        </div>
+        <form class="search-form" id="search-form">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            aria-label="Cari produk Imajireka"
+            autocomplete="off"
+            id="search-input"
+            placeholder="Search products..."
+            type="search"
+          />
+          <button
+            aria-label="Hapus pencarian"
+            class="search-clear"
+            id="search-clear"
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </form>
+        <div class="search-content">
+          <div class="search-popular" id="search-popular">
+            <div class="search-section-head">
+              <h3>Popular Searches</h3>
+            </div>
+            <div class="search-tags">
+              <button
+                class="search-tag"
+                data-search-term="keyboard"
+                type="button"
+              >
+                Keyboard
+              </button>
+              <button
+                class="search-tag"
+                data-search-term="earbuds"
+                type="button"
+              >
+                Earbuds
+              </button>
+              <button class="search-tag" data-search-term="watch" type="button">
+                Smart Watch
+              </button>
+              <button
+                class="search-tag"
+                data-search-term="controller"
+                type="button"
+              >
+                Game Controller
+              </button>
+            </div>
+          </div>
+          <div
+            aria-live="polite"
+            class="search-results"
+            id="search-results"
+          ></div>
+        </div>
+        <p class="search-message" id="search-message"></p>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="account-popup-wrapper"
+      id="account-popup-wrapper"
+    >
+      <div class="account-popup-overlay" data-close-account=""></div>
+      <div
+        aria-labelledby="account-popup-title"
+        aria-modal="true"
+        class="account-popup"
+        id="account-popup"
+        role="dialog"
+      >
+        <div class="account-popup-head">
+          <div class="account-user">
+            <div class="account-avatar" id="account-avatar">G</div>
+            <div class="account-user-info">
+              <h3 id="account-popup-title">Hello, Gangga! 👋</h3>
+              <p id="account-popup-email">gangga@example.com</p>
+            </div>
+          </div>
+          <button
+            aria-label="Tutup account menu"
+            class="account-popup-close"
+            id="account-popup-close"
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="account-popup-menu">
+          <button
+            class="account-menu-item"
+            data-account-page="account"
+            type="button"
+          >
+            <span class="account-menu-icon">
+              <i class="fa-regular fa-user"></i>
+            </span>
+            <span class="account-menu-text">
+              <strong>My Account</strong>
+              <small>Profile &amp; personal information</small>
+            </span>
+            <i class="fa-solid fa-angle-right account-menu-arrow"></i>
+          </button>
+          <button
+            class="account-menu-item"
+            data-account-page="orders"
+            type="button"
+          >
+            <span class="account-menu-icon">
+              <i class="fa-regular fa-box"></i>
+            </span>
+            <span class="account-menu-text">
+              <strong>My Orders</strong>
+              <small>Track your recent orders</small>
+            </span>
+            <i class="fa-solid fa-angle-right account-menu-arrow"></i>
+          </button>
+          <button
+            class="account-menu-item"
+            data-account-page="wishlist"
+            type="button"
+          >
+            <span class="account-menu-icon">
+              <i class="fa-regular fa-heart"></i>
+            </span>
+            <span class="account-menu-text">
+              <strong>My Wishlist</strong>
+              <small>View your saved products</small>
+            </span>
+            <i class="fa-solid fa-angle-right account-menu-arrow"></i>
+          </button>
+          <button
+            class="account-menu-item"
+            data-account-page="addresses"
+            type="button"
+          >
+            <span class="account-menu-icon">
+              <i class="fa-regular fa-location-dot"></i>
+            </span>
+            <span class="account-menu-text">
+              <strong>Addresses</strong>
+              <small>Manage your delivery addresses</small>
+            </span>
+            <i class="fa-solid fa-angle-right account-menu-arrow"></i>
+          </button>
+        </div>
+        <div class="account-popup-footer">
+          <button class="account-logout" id="account-logout" type="button">
+            <i class="fa-regular fa-arrow-right-from-bracket"></i>
+            <span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="account-page-wrapper"
+      id="account-page-wrapper"
+    >
+      <div class="account-page-overlay" data-close-account-page=""></div>
+      <div
+        aria-labelledby="account-page-title"
+        aria-modal="true"
+        class="account-page-modal"
+        role="dialog"
+      >
+        <button
+          aria-label="Tutup halaman akun"
+          class="account-page-close"
+          id="account-page-close"
+          type="button"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="account-page-header">
+          <div class="account-page-avatar" id="account-page-avatar">G</div>
+          <div>
+            <p class="account-page-eyebrow">My Account</p>
+            <h2 id="account-page-title">Welcome back!</h2>
+            <p id="account-page-email">gangga@example.com</p>
+          </div>
+        </div>
+        <div class="account-page-grid">
+          <button
+            class="account-page-card"
+            data-account-page-card="profile"
+            type="button"
+          >
+            <i class="fa-regular fa-user"></i>
+            <strong>Personal Information</strong>
+            <span>Manage your profile details</span>
+          </button>
+          <button
+            class="account-page-card"
+            data-account-page-card="orders"
+            type="button"
+          >
+            <i class="fa-regular fa-box"></i>
+            <strong>My Orders</strong>
+            <span>View and track your orders</span>
+          </button>
+          <button
+            class="account-page-card"
+            data-account-page-card="wishlist"
+            type="button"
+          >
+            <i class="fa-regular fa-heart"></i>
+            <strong>Wishlist</strong>
+            <span>See products you saved</span>
+          </button>
+          <button
+            class="account-page-card"
+            data-account-page-card="addresses"
+            type="button"
+          >
+            <i class="fa-regular fa-location-dot"></i>
+            <strong>Addresses</strong>
+            <span>Manage your shipping addresses</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <main>
+      <!-- ===================== PAGE HERO ===================== -->
+      <section class="all-products-hero">
+        <div class="all-products-hero-inner">
+          <div>
+            <span class="all-products-eyebrow">IMAJIREKA COLLECTION</span>
+            <h1>All Products</h1>
+            <p>
+              Discover illustrated pieces made to bring imagination into your
+              everyday life — from wearable art to prints, stickers, bags, and
+              more.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ===================== PRODUCTS ===================== -->
+      <section class="all-products-section">
+        <div class="all-products-inner">
+          <div class="catalog-toolbar">
+            <button
+              class="filter-mobile-btn"
+              id="filter-mobile-btn"
+              type="button"
+            >
+              <i class="fa-solid fa-sliders"></i>
+              Filters
+              <span id="active-filter-count">0</span>
+            </button>
+            <label class="sort-control">
+              <span>Sort by</span>
+              <select aria-label="Sort products" id="sort-products">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name">Name: A–Z</option>
+              </select>
+            </label>
+          </div>
+          <div class="catalog-layout">
+            <!-- ===================== FILTER SIDEBAR ===================== -->
+            <aside class="filter-sidebar" id="filter-sidebar">
+              <div class="filter-sidebar-head">
+                <div>
+                  <span>FILTER</span>
+                  <h2>Find your style</h2>
+                </div>
+                <button
+                  aria-label="Close filters"
+                  id="filter-close"
+                  type="button"
+                >
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <div class="filter-group">
+                <h3>Category</h3>
+                <label class="filter-check">
+                  <input
+                    data-filter-category=""
+                    type="checkbox"
+                    value="Apparel"
+                  />
+                  <span></span>
+                  <strong>Apparel</strong>
+                  <small>4</small>
+                </label>
+                <label class="filter-check">
+                  <input data-filter-category="" type="checkbox" value="Bags" />
+                  <span></span>
+                  <strong>Bags</strong>
+                  <small>2</small>
+                </label>
+                <label class="filter-check">
+                  <input
+                    data-filter-category=""
+                    type="checkbox"
+                    value="Posters &amp; Prints"
+                  />
+                  <span></span>
+                  <strong>Posters &amp; Prints</strong>
+                  <small>3</small>
+                </label>
+                <label class="filter-check">
+                  <input
+                    data-filter-category=""
+                    type="checkbox"
+                    value="Stickers"
+                  />
+                  <span></span>
+                  <strong>Stickers</strong>
+                  <small>2</small>
+                </label>
+                <label class="filter-check">
+                  <input
+                    data-filter-category=""
+                    type="checkbox"
+                    value="Accessories"
+                  />
+                  <span></span>
+                  <strong>Accessories</strong>
+                  <small>4</small>
+                </label>
+                <label class="filter-check">
+                  <input
+                    data-filter-category=""
+                    type="checkbox"
+                    value="Stationery"
+                  />
+                  <span></span>
+                  <strong>Stationery</strong>
+                  <small>2</small>
+                </label>
+                <label class="filter-check">
+                  <input
+                    data-filter-category=""
+                    type="checkbox"
+                    value="Home &amp; Lifestyle"
+                  />
+                  <span></span>
+                  <strong>Home &amp; Lifestyle</strong>
+                  <small>1</small>
+                </label>
+                <label class="filter-check filter-check-student-work">
+                  <input
+                    data-filter-category=""
+                    type="checkbox"
+                    value="Karya Siswa Imajireka"
+                  />
+                  <span></span>
+                  <strong>Karya Siswa Imajireka</strong>
+                  <small>12</small>
+                </label>
+              </div>
+              <div class="filter-divider"></div>
+              <div class="filter-group">
+                <div class="filter-group-title">
+                  <h3>Price</h3>
+                  <button id="reset-price" type="button">Reset</button>
+                </div>
+                <div class="price-inputs">
+                  <label>
+                    <span>Min</span>
+                    <input id="price-min" min="0" type="number" value="0" />
+                  </label>
+                  <span>—</span>
+                  <label>
+                    <span>Max</span>
+                    <input id="price-max" min="0" type="number" value="500" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="filter-divider"></div>
+              <div class="filter-group">
+                <h3>Availability</h3>
+                <label class="filter-check">
+                  <input id="in-stock-only" type="checkbox" />
+                  <span></span>
+                  <strong>In stock only</strong>
+                </label>
+              </div>
+              <div class="filter-divider"></div>
+              <button class="clear-filters" id="clear-filters" type="button">
+                <i class="fa-regular fa-rotate-left"></i>
+                Clear all filters
+              </button>
+              <button class="apply-filters" id="apply-filters" type="button">
+                Show Products
+              </button>
+            </aside>
+            <div class="filter-overlay" id="filter-overlay"></div>
+            <!-- ===================== PRODUCT GRID ===================== -->
+            <div class="catalog-content">
+              <div class="catalog-search">
+                <i class="fa-regular fa-magnifying-glass"></i>
+                <input
+                  autocomplete="off"
+                  id="catalog-search-input"
+                  placeholder="Search illustrations, t-shirts, tote bags..."
+                  type="search"
+                />
+                <button
+                  aria-label="Clear search"
+                  id="catalog-search-clear"
+                  type="button"
+                >
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <div class="active-filters" id="active-filters"></div>
+              <div class="catalog-grid" id="catalog-grid"></div>
+              <div class="catalog-empty" hidden="" id="catalog-empty">
+                <div class="catalog-empty-icon">
+                  <i class="fa-regular fa-face-frown"></i>
+                </div>
+                <h2>No products found</h2>
+                <p>Try changing your filters or search with another keyword.</p>
+                <button class="apply-filters" id="empty-reset" type="button">
+                  Reset Filters
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="all-products-footer">
+      <div class="all-products-footer-inner">
+        <a class="footer-logo" href="index.html">
+          <img alt="Imajireka" src="assets/imajireka-logo.svg" />
+        </a>
+        <p>Illustration made for everyday stories.</p>
+        <a class="footer-home-link" href="index.html">
+          Back to Imajireka Home
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/all-products.js"></script>
+  </body>
+</html>

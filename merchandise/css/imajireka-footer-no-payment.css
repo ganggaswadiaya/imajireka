@@ -1,9 +1,0 @@
-
-/* Imajireka footer - remove payment methods */
-footer .payment-method,
-footer .payment-methods,
-footer .footer-payment,
-footer .footer-payments,
-footer [class*="payment"] {
-    display: none !important;
-}
