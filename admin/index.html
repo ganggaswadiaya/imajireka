@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard Admin — Imajireka Merchandise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/font-awesome-pro.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><img src="../assets/imajireka-logo.svg" alt="Imajireka"><b>ADMIN</b></div>
+  <nav>
+    <small>MAIN MENU</small>
+    <a class="menu active" data-page="dashboard"><i class="fa-regular fa-grid-2"></i>Dashboard</a>
+    <a class="menu" data-page="products"><i class="fa-regular fa-box"></i>Products</a>
+    <a class="menu" data-page="orders"><i class="fa-regular fa-bag-shopping"></i>Orders <em>8</em></a>
+    <a class="menu" data-page="students"><i class="fa-regular fa-palette"></i>Karya Siswa</a>
+    <a class="menu" data-page="customers"><i class="fa-regular fa-users"></i>Customers</a>
+    <small class="group">MANAGEMENT</small>
+    <a class="menu" data-page="reports"><i class="fa-regular fa-chart-simple"></i>Reports</a>
+    <a class="menu" data-page="settings"><i class="fa-regular fa-gear"></i>Settings</a>
+  </nav>
+  <div class="userbox"><div class="avatar">AD</div><div><strong>Admin Imajireka</strong><span>Administrator</span></div></div>
+  <button class="logout" id="logout"><i class="fa-regular fa-arrow-right-from-bracket"></i>Logout</button>
+</aside>
+<div class="overlay" id="overlay"></div>
+
+<main>
+<header>
+  <button class="mobile-menu" id="mobile-menu"><i class="fa-regular fa-bars"></i></button>
+  <div><small>IMAJIREKA MERCHANDISE</small><h1 id="title">Dashboard</h1></div>
+  <div class="head-right"><button class="bell"><i class="fa-regular fa-bell"></i><i></i></button><div class="head-user"><div class="avatar">AD</div><div><strong>Admin Imajireka</strong><span>Administrator</span></div></div></div>
+</header>
+
+<section class="content">
+<div class="page active" id="dashboard">
+  <div class="welcome"><div><h2>Good evening, Admin! 👋</h2><p>Berikut ringkasan aktivitas merchandise Imajireka hari ini.</p></div><button class="primary"><i class="fa-regular fa-plus"></i>Tambah Produk</button></div>
+
+  <div class="stats">
+    <article><i class="stat orange fa-regular fa-box"></i><div><span>Total Produk</span><strong>24</strong><small class="up">↑ 12% bulan ini</small></div></article>
+    <article><i class="stat green fa-regular fa-bag-shopping"></i><div><span>Total Pesanan</span><strong>128</strong><small class="up">↑ 8.4% bulan ini</small></div></article>
+    <article><i class="stat blue fa-regular fa-wallet"></i><div><span>Total Penjualan</span><strong>Rp 18,4 jt</strong><small class="up">↑ 15.2% bulan ini</small></div></article>
+    <article><i class="stat purple fa-regular fa-palette"></i><div><span>Karya Siswa</span><strong>16</strong><small>aktif di merchandise</small></div></article>
+  </div>
+
+  <div class="grid">
+    <article class="panel sales"><div class="panel-head"><div><h3>Penjualan</h3><p>Performa penjualan 7 hari terakhir</p></div><select><option>7 Hari</option><option>30 Hari</option></select></div>
+      <div class="chart"><div class="y"><span>4jt</span><span>3jt</span><span>2jt</span><span>1jt</span><span>0</span></div><div class="chartbox"><div class="lines"></div><svg viewBox="0 0 700 260" preserveAspectRatio="none"><path class="fill" d="M0 205C70 185 85 150 145 164S220 120 285 142S350 95 415 115S485 82 545 105S625 50 700 72V260H0Z"/><path class="line" d="M0 205C70 185 85 150 145 164S220 120 285 142S350 95 415 115S485 82 545 105S625 50 700 72"/></svg><div class="days"><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span></div></div></div>
+    </article>
+    <article class="panel"><div class="panel-head"><div><h3>Produk Terlaris</h3><p>Berdasarkan penjualan</p></div><button class="link">Lihat semua</button></div>
+      <div class="top"><div><b>👕</b><span><strong>Dreamscape Illustration T-Shirt</strong><small>Apparel</small></span><em>42 terjual</em></div><div><b>👜</b><span><strong>Bali Sunset Tote Bag</strong><small>Bags</small></span><em>31 terjual</em></div><div><b>🖼️</b><span><strong>Dreamscape Art Print</strong><small>Posters & Prints</small></span><em>27 terjual</em></div><div><b>🎨</b><span><strong>Dreamscape Sticker Pack</strong><small>Stickers</small></span><em>21 terjual</em></div></div>
+    </article>
+  </div>
+
+  <div class="grid bottom">
+    <article class="panel"><div class="panel-head"><div><h3>Pesanan Terbaru</h3><p>Aktivitas order terbaru</p></div><button class="link">Lihat semua</button></div>
+      <div class="table-wrap"><table><thead><tr><th>ORDER</th><th>CUSTOMER</th><th>TOTAL</th><th>STATUS</th></tr></thead><tbody>
+      <tr><td><b>#IMJ-1028</b></td><td>Putri Ayu</td><td>Rp 240.000</td><td><mark class="processing">Diproses</mark></td></tr>
+      <tr><td><b>#IMJ-1027</b></td><td>Raka Pratama</td><td>Rp 185.000</td><td><mark class="shipped">Dikirim</mark></td></tr>
+      <tr><td><b>#IMJ-1026</b></td><td>Sinta Dewi</td><td>Rp 95.000</td><td><mark class="completed">Selesai</mark></td></tr>
+      <tr><td><b>#IMJ-1025</b></td><td>Made Arya</td><td>Rp 310.000</td><td><mark class="pending">Menunggu</mark></td></tr>
+      </tbody></table></div>
+    </article>
+    <article class="panel"><div class="panel-head"><div><h3>Stok Menipis</h3><p>Perlu segera diperhatikan</p></div></div>
+      <div class="stock"><div><strong>Bali Sunset Tote Bag</strong><small>SKU: BAG-002</small><b>4 tersisa</b></div><div><strong>Dreamscape Sticker Pack</strong><small>SKU: STK-001</small><b>6 tersisa</b></div><div><strong>Illustration Hoodie</strong><small>SKU: APP-006</small><b>9 tersisa</b></div></div>
+    </article>
+  </div>
+</div>
+
+<div class="placeholder page" id="products"><div><i class="fa-regular fa-box"></i><h2>Product Management</h2><p>Kelola produk, kategori, harga, stok, dan karya siswa.</p></div></div>
+<div class="placeholder page" id="orders"><div><i class="fa-regular fa-bag-shopping"></i><h2>Order Management</h2><p>Kelola dan proses semua pesanan customer.</p></div></div>
+<div class="placeholder page" id="students"><div><i class="fa-regular fa-palette"></i><h2>Karya Siswa Imajireka</h2><p>Kelola data siswa dan karya yang digunakan dalam merchandise.</p></div></div>
+<div class="placeholder page" id="customers"><div><i class="fa-regular fa-users"></i><h2>Customers</h2><p>Kelola akun customer dan riwayat pembelian.</p></div></div>
+<div class="placeholder page" id="reports"><div><i class="fa-regular fa-chart-simple"></i><h2>Reports</h2><p>Laporan penjualan dan performa merchandise.</p></div></div>
+<div class="settings-page page" id="settings">
+  <div class="settings-intro">
+    <div>
+      <span>STORE CONFIGURATION</span>
+      <h2>Pengaturan Imajireka</h2>
+      <p>Atur informasi toko, akun administrator, tampilan, dan preferensi operasional merchandise.</p>
+    </div>
+    <button class="save-all" id="save-settings"><i class="fa-regular fa-floppy-disk"></i>Simpan Perubahan</button>
+  </div>
+
+  <div class="settings-layout">
+    <div class="settings-tabs">
+      <button class="setting-tab active" data-setting="store"><i class="fa-regular fa-store"></i><span><b>Informasi Toko</b><small>Identitas merchandise</small></span></button>
+      <button class="setting-tab" data-setting="account"><i class="fa-regular fa-user"></i><span><b>Akun Admin</b><small>Profil & keamanan</small></span></button>
+      <button class="setting-tab" data-setting="appearance"><i class="fa-regular fa-palette"></i><span><b>Tampilan</b><small>Preferensi dashboard</small></span></button>
+      <button class="setting-tab" data-setting="notifications"><i class="fa-regular fa-bell"></i><span><b>Notifikasi</b><small>Pemberitahuan sistem</small></span></button>
+      <button class="setting-tab" data-setting="commerce"><i class="fa-regular fa-cart-shopping"></i><span><b>Commerce</b><small>Pesanan & stok</small></span></button>
+    </div>
+
+    <div class="settings-content">
+      <div class="setting-panel active" data-panel="store">
+        <div class="setting-heading"><h3>Informasi Toko</h3><p>Informasi ini digunakan sebagai identitas Imajireka Merchandise.</p></div>
+        <div class="logo-setting">
+          <div class="logo-preview"><img src="../assets/imajireka-logo.svg" alt="Imajireka"></div>
+          <div><strong>Logo Imajireka</strong><p>Gunakan logo utama Imajireka pada dashboard dan halaman toko.</p><button class="secondary-btn">Ganti Logo</button></div>
+        </div>
+        <div class="form-grid">
+          <label>Nama Toko<input id="store-name" value="Imajireka Merchandise"></label>
+          <label>Email Toko<input id="store-email" type="email" value="hello@imajireka.com"></label>
+          <label>No. WhatsApp<input id="store-phone" value="+62 812-3456-7890"></label>
+          <label>Instagram<input id="store-instagram" value="@imajireka"></label>
+          <label class="full">Deskripsi Toko<textarea id="store-description">Merchandise hasil karya siswa dan peserta didik Imajireka — dari ilustrasi hingga produk kreatif yang dibuat dengan imajinasi.</textarea></label>
+          <label>Alamat Kota<input id="store-city" value="Denpasar, Bali"></label>
+          <label>Mata Uang<select id="currency"><option selected>IDR — Rupiah</option><option>USD — Dollar</option></select></label>
+        </div>
+      </div>
+
+      <div class="setting-panel" data-panel="account">
+        <div class="setting-heading"><h3>Akun Administrator</h3><p>Kelola identitas dan keamanan akun yang digunakan untuk masuk ke dashboard.</p></div>
+        <div class="profile-row"><div class="big-avatar">AD</div><div><strong>Admin Imajireka</strong><p>Administrator utama</p><button class="secondary-btn">Ganti Foto</button></div></div>
+        <div class="form-grid">
+          <label>Nama Lengkap<input value="Admin Imajireka"></label>
+          <label>Email<input type="email" value="admin@imajireka.com"></label>
+          <label>Password Baru<input type="password" placeholder="Masukkan password baru"></label>
+          <label>Konfirmasi Password<input type="password" placeholder="Ulangi password baru"></label>
+        </div>
+        <div class="security-note"><i class="fa-regular fa-shield-check"></i><div><strong>Keamanan akun</strong><p>Gunakan password minimal 8 karakter dan jangan membagikannya kepada orang lain.</p></div></div>
+      </div>
+
+      <div class="setting-panel" data-panel="appearance">
+        <div class="setting-heading"><h3>Tampilan Dashboard</h3><p>Atur preferensi tampilan yang nyaman digunakan saat mengelola toko.</p></div>
+        <div class="option-row"><div><strong>Tema Dashboard</strong><small>Gunakan tampilan terang untuk dashboard admin.</small></div><div class="choice-group"><button class="choice active">Light</button><button class="choice" disabled>Dark</button></div></div>
+        <div class="option-row"><div><strong>Sidebar</strong><small>Sidebar tetap terbuka saat menggunakan desktop.</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+        <div class="option-row"><div><strong>Animasi Interface</strong><small>Gunakan animasi ringan saat berpindah menu.</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+      </div>
+
+      <div class="setting-panel" data-panel="notifications">
+        <div class="setting-heading"><h3>Notifikasi</h3><p>Tentukan pemberitahuan yang ingin diterima administrator.</p></div>
+        <div class="option-row"><div><strong>Pesanan Baru</strong><small>Beritahu ketika customer membuat pesanan baru.</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+        <div class="option-row"><div><strong>Stok Menipis</strong><small>Beritahu ketika stok produk berada di bawah batas minimum.</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+        <div class="option-row"><div><strong>Pembayaran Berhasil</strong><small>Beritahu ketika pembayaran pesanan berhasil dikonfirmasi.</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+        <div class="option-row"><div><strong>Produk Baru dari Siswa</strong><small>Beritahu ketika karya siswa ditambahkan sebagai produk.</small></div><label class="switch"><input type="checkbox"><span></span></label></div>
+      </div>
+
+      <div class="setting-panel" data-panel="commerce">
+        <div class="setting-heading"><h3>Commerce</h3><p>Atur aturan dasar pengelolaan pesanan dan stok merchandise.</p></div>
+        <div class="form-grid">
+          <label>Batas Stok Menipis<input type="number" value="10" min="0"></label>
+          <label>Durasi Pesanan Menunggu (jam)<input type="number" value="24" min="1"></label>
+          <label>Biaya Pengiriman Default<input value="Rp 15.000"></label>
+          <label>Minimal Pembelian Gratis Ongkir<input value="Rp 300.000"></label>
+        </div>
+        <div class="option-row"><div><strong>Kurangi Stok Otomatis</strong><small>Kurangi stok ketika pesanan berhasil dibuat.</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+        <div class="option-row"><div><strong>Izinkan Checkout Produk Habis</strong><small>Customer tetap dapat melakukan pre-order pada produk tertentu.</small></div><label class="switch"><input type="checkbox"><span></span></label></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+<script src="js/admin.js"></script>
+</body>
+</html>
