@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Imajireka adalah creative ecosystem yang menghubungkan pendidikan ilustrasi, jasa kreatif, dan merchandise dalam satu ruang untuk berkarya."
+    />
+    <title>Imajireka — Creative Ecosystem from Bali</title>
+    <link rel="icon" type="image/png" href="assets/Imajireka Logo Bulat.png" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Navigasi utama">
+        <a class="logo" href="#hero" aria-label="Imajireka Home">
+          <img src="assets/IMAJIREKA LOGO PANJANG.svg" alt="Imajireka" />
+        </a>
+
+        <div class="navbar-link" id="mainNav">
+          <ul>
+            <li>
+              <a class="active" href="#hero" data-i18n="nav.home">Beranda</a>
+            </li>
+            <li><a href="#about" data-i18n="nav.about">Tentang</a></li>
+            <li><a href="#ecosystem" data-i18n="nav.eco">Ekosistem</a></li>
+            <li><a href="#work" data-i18n="nav.work">Karya</a></li>
+            <li><a href="#process" data-i18n="nav.process">Proses</a></li>
+            <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="language-switcher" id="languageSwitcher">
+          <button
+            class="language-toggle"
+            id="languageToggle"
+            type="button"
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-label="Pilih bahasa"
+          >
+            <img
+              id="currentLanguageFlag"
+              src="assets/flags/indonesia.svg"
+              alt=""
+            />
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="language-menu" id="languageMenu" role="menu">
+            <button
+              type="button"
+              class="language-option active"
+              data-lang="id"
+              role="menuitem"
+            >
+              <img src="assets/flags/indonesia.svg" alt="" />
+              <span>Indonesia</span>
+            </button>
+            <button
+              type="button"
+              class="language-option"
+              data-lang="en"
+              role="menuitem"
+            >
+              <img src="assets/flags/england.svg" alt="" />
+              <span>English</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="#contact" class="nav-cta" data-i18n="nav.cta"
+          >Mari Bicara
+          <i class="fa-solid fa-arrow-right" style="margin-left: 0.4rem"></i
+        ></a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero" class="hero-section">
+        <div class="hero container">
+          <div class="hero-copy reveal">
+            <span class="eyebrow"
+              ><i class="fa-solid fa-sparkles"></i> Ekosistem Kreatif dari
+              Bali</span
+            >
+            <h1 data-i18n="hero.title">
+              Ruang untuk <span>imajinasi,</span><br />tempat ide jadi karya.
+            </h1>
+            <p data-i18n="hero.desc">
+              Imajireka hadir sebagai ruang kreatif yang mempertemukan proses
+              belajar, layanan kreatif, dan produk merchandise dalam satu
+              ekosistem.
+            </p>
+            <div class="hero-actions">
+              <a href="#ecosystem" class="btn btn-primary" data-i18n="hero.btn1"
+                >Jelajahi Imajireka <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#about" class="btn btn-secondary" data-i18n="hero.btn2"
+                >Kenal Lebih Dekat</a
+              >
+            </div>
+            <div class="hero-note">
+              <span></span>
+              <span data-i18n="hero.note"
+                >Imajinasi · Kreasi · Untuk Semua</span
+              >
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="visual-orbit orbit-one"></div>
+            <div class="visual-orbit orbit-two"></div>
+            <div class="visual-blob blob-orange"></div>
+            <div class="visual-blob blob-blue"></div>
+            <div class="hero-art-card">
+              <img
+                src="assets/heroImage.png"
+                alt="Ilustrasi proses kreatif Imajireka"
+              />
+            </div>
+            <div class="floating-card floating-idea">
+              <i class="fa-regular fa-lightbulb"></i><span>Ide</span>
+            </div>
+            <div class="floating-card floating-create">
+              <i class="fa-solid fa-pen-nib"></i><span>Karya</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="about-section section-light">
+        <div class="about-container container">
+          <div class="about-visual reveal">
+            <div class="image-frame">
+              <img
+                src="assets/about-img.png"
+                alt="Tim dan aktivitas kreatif Imajireka"
+              />
+            </div>
+            <div class="image-caption">
+              <strong>Imajireka</strong
+              ><span>One ecosystem, many possibilities.</span>
+            </div>
+          </div>
+          <div class="about-copy reveal">
+            <span class="section-label" data-i18n="about.label"
+              >Tentang Imajireka</span
+            >
+            <h2 data-i18n="about.title">
+              Lebih dari sekadar <span>perusahaan kreatif.</span>
+            </h2>
+            <p>
+              Imajireka adalah ekosistem kreatif yang dibangun untuk memberi
+              ruang bagi ide untuk tumbuh. Kami menghubungkan tiga bagian yang
+              saling melengkapi: belajar melalui Academy, mewujudkan kebutuhan
+              kreatif melalui Studio, dan membawa karya lebih dekat melalui
+              Merchandise.
+            </p>
+            <p>
+              Dengan satu identitas, setiap bagian Imajireka memiliki peran yang
+              berbeda namun bergerak menuju tujuan yang sama: membuat
+              kreativitas lebih mudah dipelajari, digunakan, dan dinikmati.
+            </p>
+            <div class="about-points">
+              <div>
+                <i class="fa-solid fa-circle-check"></i
+                ><span data-i18n="about.point1"
+                  >Belajar dan berkembang bersama
+                  <span class="about-point-accent"
+                    >Imajireka Academy</span
+                  ></span
+                >
+              </div>
+              <div>
+                <i class="fa-solid fa-circle-check"></i
+                ><span data-i18n="about.point2"
+                  >Wujudkan ide kreatifmu di
+                  <span class="about-point-accent">Imajireka Studio</span></span
+                >
+              </div>
+              <div>
+                <i class="fa-solid fa-circle-check"></i
+                ><span data-i18n="about.point3"
+                  >Bawa karyamu menjadi nyata di
+                  <span class="about-point-accent"
+                    >Imajireka Merchandise</span
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ECOSYSTEM -->
+      <section id="ecosystem" class="ecosystem-section">
+        <div class="container">
+          <div class="section-heading centered reveal">
+            <span class="section-label" data-i18n="eco.label"
+              >Ekosistem Kami</span
+            >
+            <h2 data-i18n="eco.title">Satu visi. <span>Tiga pilar.</span></h2>
+            <p>
+              Tiga bagian Imajireka dirancang untuk menemani perjalanan kreatif
+              dari proses belajar hingga karya yang bisa dinikmati.
+            </p>
+          </div>
+
+          <div class="ecosystem-grid">
+            <article class="ecosystem-card academy reveal">
+              <div class="card-top">
+                <span class="card-number">01</span>
+                <div class="icon-wrap">
+                  <img src="assets/academy.png" alt="" />
+                </div>
+              </div>
+              <span class="card-kicker" data-i18n="eco.kicker1">Belajar</span>
+              <h3>Imajireka Academy</h3>
+              <p>
+                Ruang belajar ilustrasi untuk mengembangkan kemampuan, memahami
+                proses kreatif, dan membangun kepercayaan diri dalam berkarya.
+              </p>
+              <a href="#contact" data-i18n="eco.btn1"
+                >Kenali Academy <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </article>
+
+            <article class="ecosystem-card studio reveal">
+              <div class="card-top">
+                <span class="card-number">02</span>
+                <div class="icon-wrap">
+                  <img src="assets/studio.png" alt="" />
+                </div>
+              </div>
+              <span class="card-kicker" data-i18n="eco.kicker2">Berkarya</span>
+              <h3>Imajireka Studio</h3>
+              <p>
+                Layanan kreatif untuk membantu menerjemahkan ide menjadi
+                ilustrasi, visual, dan kebutuhan komunikasi yang lebih bermakna.
+              </p>
+              <a href="#contact" data-i18n="eco.btn2"
+                >Kenali Studio <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </article>
+
+            <article class="ecosystem-card merchandise reveal">
+              <div class="card-top">
+                <span class="card-number">03</span>
+                <div class="icon-wrap">
+                  <img src="assets/merchandise.png" alt="" />
+                </div>
+              </div>
+              <span class="card-kicker" data-i18n="eco.kicker3"
+                >Pengalaman</span
+              >
+              <h3>Imajireka Merchandise</h3>
+              <p>
+                Produk merchandise yang membawa karakter dan karya Imajireka ke
+                dalam benda-benda yang dekat dengan keseharian.
+              </p>
+              <a href="#contact" data-i18n="eco.btn3"
+                >Kenali Merchandise <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </article>
+          </div>
+
+          <div class="ecosystem-line reveal">
+            <span></span>
+            <p>Learn <b>→</b> Create <b>→</b> Experience</p>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section id="work" class="work-section section-light">
+        <div class="container">
+          <div class="work-heading reveal">
+            <div>
+              <span class="section-label" data-i18n="work.label"
+                >Sekilas tentang Imajireka</span
+              >
+              <h2 data-i18n="work.title">
+                Ide yang <span>menjadi karya.</span>
+              </h2>
+            </div>
+            <p>
+              Kreativitas Imajireka hadir dalam berbagai bentuk—dari proses
+              belajar, eksplorasi visual, hingga karya yang dibawa ke kehidupan
+              sehari-hari.
+            </p>
+          </div>
+
+          <div class="work-grid">
+            <figure class="work-item work-large reveal">
+              <img
+                src="assets/imajireka-academy.jpeg"
+                alt="Aktivitas ilustrasi Imajireka"
+              />
+              <figcaption>
+                <span>Learn</span><strong>Eksplorasi Ilustrasi</strong>
+              </figcaption>
+            </figure>
+            <figure class="work-item reveal">
+              <img
+                src="assets/imajireka-merch.png"
+                alt="Karya ilustrasi Imajireka"
+              />
+              <figcaption>
+                <span>Create</span><strong>Proses Berkarya</strong>
+              </figcaption>
+            </figure>
+            <figure class="work-item reveal">
+              <img
+                src="assets/imajireka-academy2.jpeg"
+                alt="Kegiatan kreatif Imajireka"
+              />
+              <figcaption>
+                <span>Grow</span><strong>Ruang untuk Bertumbuh</strong>
+              </figcaption>
+            </figure>
+            <figure class="work-item work-wide reveal">
+              <img
+                src="assets/imajierka-studio.png"
+                alt="Karya visual Imajireka"
+              />
+              <figcaption>
+                <span>Imagine</span><strong>Setiap Ide Punya Cerita</strong>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section id="process" class="process-section">
+        <div class="container">
+          <div class="section-heading centered reveal">
+            <span class="section-label" data-i18n="process.label"
+              >Alur Kreatif Kami</span
+            >
+            <h2 data-i18n="process.title">
+              Dari ide menuju <span>impact.</span>
+            </h2>
+            <p>
+              Setiap perjalanan kreatif punya bentuk yang berbeda. Imajireka
+              menjaganya tetap terarah, kolaboratif, dan relevan dengan tujuan.
+            </p>
+          </div>
+          <div class="process-grid">
+            <article class="process-card reveal">
+              <span>01</span><i class="fa-regular fa-lightbulb"></i>
+              <h3 data-i18n="process.h1">Temukan</h3>
+              <p>
+                Memahami ide, kebutuhan, tujuan, dan cerita di balik sebuah
+                karya.
+              </p>
+            </article>
+            <article class="process-card reveal">
+              <span>02</span><i class="fa-solid fa-pencil"></i>
+              <h3 data-i18n="process.h2">Jelajahi</h3>
+              <p>
+                Mengeksplorasi konsep, referensi, gaya visual, dan berbagai
+                kemungkinan.
+              </p>
+            </article>
+            <article class="process-card reveal">
+              <span>03</span><i class="fa-solid fa-wand-magic-sparkles"></i>
+              <h3 data-i18n="process.h3">Ciptakan</h3>
+              <p>
+                Mengubah konsep menjadi karya melalui proses yang terukur dan
+                kolaboratif.
+              </p>
+            </article>
+            <article class="process-card reveal">
+              <span>04</span><i class="fa-solid fa-arrow-up-right-dots"></i>
+              <h3 data-i18n="process.h4">Wujudkan</h3>
+              <p>
+                Membawa hasil akhir menjadi sesuatu yang bisa digunakan,
+                dipelajari, atau dinikmati.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="faq-section section-light">
+        <div class="container faq-layout">
+          <div class="faq-intro reveal">
+            <span class="section-label" data-i18n="faq.label">FAQ</span>
+            <h2 data-i18n="faq.title">
+              Punya pertanyaan tentang <span>Imajireka?</span>
+            </h2>
+            <p>
+              Beberapa hal yang sering ingin diketahui sebelum mengenal lebih
+              jauh ekosistem Imajireka.
+            </p>
+          </div>
+          <div class="faq-list reveal">
+            <details open>
+              <summary>
+                Apa itu Imajireka?<i class="fa-solid fa-plus"></i>
+              </summary>
+              <p>
+                Imajireka adalah creative ecosystem yang menaungi Imajireka
+                Academy, Imajireka Studio, dan Imajireka Merchandise.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Apa perbedaan Academy, Studio, dan Merchandise?<i
+                  class="fa-solid fa-plus"
+                ></i>
+              </summary>
+              <p>
+                Academy berfokus pada pembelajaran ilustrasi, Studio pada
+                layanan kreatif, sedangkan Merchandise menghadirkan produk yang
+                membawa karya Imajireka ke keseharian.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Apakah saya bisa bekerja sama dengan Imajireka?<i
+                  class="fa-solid fa-plus"
+                ></i>
+              </summary>
+              <p>
+                Tentu. Untuk kebutuhan kolaborasi, jasa kreatif, atau pertanyaan
+                lainnya, silakan hubungi tim Imajireka melalui kontak yang
+                tersedia.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Bagaimana cara menghubungi Imajireka?<i
+                  class="fa-solid fa-plus"
+                ></i>
+              </summary>
+              <p>
+                Kamu dapat menghubungi tim Imajireka melalui kanal komunikasi
+                yang tercantum pada bagian kontak.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact-section">
+        <div class="contact-inner container reveal">
+          <span class="section-label" data-i18n="contact.label"
+            >Hubungi Kami</span
+          >
+          <h2 data-i18n="contact.title">
+            MARI TERHUBUNG<br /><span>DENGAN KAMI</span>
+          </h2>
+          <p>
+            Temukan jawaban atas pertanyaan yang paling sering diajukan mengenai
+            kelas, studio kreatif, dan<br class="contact-break" />
+            merchandise.
+          </p>
+          <a href="#" class="contact-button" data-i18n="contact.btn"
+            >Hubungi Kami Melalui Whatsapp <i class="fa-brands fa-whatsapp"></i
+          ></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container container">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo"
+            ><img src="assets/IMAJIREKA LOGO PANJANG_PUTIH.svg" alt="Imajireka"
+          /></a>
+          <p>
+            Imajireka adalah ruang kreatif yang menghubungkan belajar, berkarya,
+            dan berkembang.
+          </p>
+          <strong>PT. IMAJI DWI KARYA</strong>
+        </div>
+        <div class="footer-links-grid">
+          <div class="footer-links">
+            <h4>Explore</h4>
+            <a href="#about">Tentang</a><a href="#ecosystem">Ekosistem</a
+            ><a href="#work">Karya</a><a href="#process">Proses</a>
+          </div>
+          <div class="footer-links">
+            <h4>Our Ecosystem</h4>
+            <a href="#ecosystem">Imajireka Academy</a
+            ><a href="#ecosystem">Imajireka Studio</a
+            ><a href="#ecosystem">Imajireka Merchandise</a>
+          </div>
+          <div class="footer-links">
+            <h4>Follow Us</h4>
+            <a
+              href="https://www.instagram.com/imajireka"
+              target="_blank"
+              rel="noopener"
+              >Instagram</a
+            ><a
+              href="https://www.facebook.com/share/18JcxRMe38/"
+              target="_blank"
+              rel="noopener"
+              >Facebook</a
+            ><a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <span>© 2026 Imajireka. All Rights Reserved.</span
+        ><span>Made with imagination.</span>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
