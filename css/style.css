@@ -2005,3 +2005,181 @@ header.navbar-scrolled {
     display: none;
   }
 }
+
+/* =========================================================
+   WORK LIGHTBOX — klik karya untuk tampil full
+========================================================= */
+.work-item {
+  cursor: zoom-in;
+}
+.work-item:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+}
+.work-zoom {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+.work-item:hover .work-zoom,
+.work-item:focus-visible .work-zoom {
+  opacity: 1;
+  transform: scale(1);
+}
+.work-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.work-lightbox.open {
+  visibility: visible;
+  opacity: 1;
+}
+.work-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 16, 12, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.work-lightbox-dialog {
+  position: relative;
+  width: min(920px, 100%);
+  max-height: min(88vh, 820px);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+}
+.work-lightbox-figure {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  background: #111;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  transform: translateY(10px) scale(0.98);
+  transition: transform 0.25s ease;
+}
+.work-lightbox.open .work-lightbox-figure {
+  transform: none;
+}
+.work-lightbox-figure img {
+  display: block;
+  width: 100%;
+  height: min(66vh, 560px);
+  object-fit: contain;
+  background: #111;
+}
+.work-lightbox-figure figcaption {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 14px 18px 16px;
+  background: #fff;
+}
+.work-lightbox-figure figcaption span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-orange);
+  font-weight: 700;
+}
+.work-lightbox-figure figcaption strong {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--color-dark);
+  flex: 1 1 auto;
+}
+.work-lightbox-figure figcaption em {
+  font-style: normal;
+  font-size: 12px;
+  color: #999;
+  white-space: nowrap;
+}
+.work-lightbox-close,
+.work-lightbox-nav {
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--color-dark);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.work-lightbox-close:hover,
+.work-lightbox-nav:hover {
+  background: var(--color-orange);
+  color: #fff;
+  transform: scale(1.05);
+}
+.work-lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -6px;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  z-index: 2;
+}
+.work-lightbox-nav {
+  align-self: center;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  font-size: 15px;
+}
+@media (max-width: 640px) {
+  .work-lightbox {
+    padding: 14px;
+  }
+  .work-lightbox-dialog {
+    gap: 8px;
+  }
+  .work-lightbox-figure img {
+    height: min(58vh, 420px);
+  }
+  .work-lightbox-figure figcaption strong {
+    font-size: 16px;
+  }
+  .work-lightbox-nav {
+    position: absolute;
+    top: 40%;
+    width: 38px;
+    height: 38px;
+  }
+  .work-lightbox-prev {
+    left: 6px;
+  }
+  .work-lightbox-next {
+    right: 6px;
+  }
+  .work-lightbox-close {
+    top: 6px;
+    right: 6px;
+  }
+}

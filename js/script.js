@@ -33,6 +33,82 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}
   }),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+  /* Work lightbox — klik karya untuk tampil full */
+  const workItems=[...document.querySelectorAll('.work-item')];
+  const lightbox=document.querySelector('#workLightbox');
+  const lightboxImg=document.querySelector('#workLightboxImage');
+  const lightboxTag=document.querySelector('#workLightboxTag');
+  const lightboxTitle=document.querySelector('#workLightboxTitle');
+  const lightboxCounter=document.querySelector('#workLightboxCounter');
+  const closeBtn=document.querySelector('.work-lightbox-close');
+  const prevBtn=document.querySelector('.work-lightbox-prev');
+  const nextBtn=document.querySelector('.work-lightbox-next');
+  let currentWork=0;
+  let lastFocused=null;
+
+  const getWorkData=index=>{
+    const item=workItems[index];
+    if(!item) return null;
+    const img=item.querySelector('img');
+    const tag=item.querySelector('figcaption span');
+    const title=item.querySelector('figcaption strong');
+    return {
+      src:img?.getAttribute('src')||'',
+      alt:img?.getAttribute('alt')||title?.textContent.trim()||'Karya Imajireka',
+      tag:tag?.textContent.trim()||'',
+      title:title?.textContent.trim()||''
+    };
+  };
+
+  const renderWork=index=>{
+    const data=getWorkData(index);
+    if(!data||!lightboxImg) return;
+    currentWork=(index+workItems.length)%workItems.length;
+    lightboxImg.src=data.src;
+    lightboxImg.alt=data.alt;
+    if(lightboxTag) lightboxTag.textContent=data.tag;
+    if(lightboxTitle) lightboxTitle.textContent=data.title;
+    if(lightboxCounter) lightboxCounter.textContent=`${currentWork+1} / ${workItems.length}`;
+  };
+
+  const openLightbox=index=>{
+    if(!lightbox||!workItems.length) return;
+    lastFocused=document.activeElement;
+    renderWork(index);
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    closeBtn?.focus({preventScroll:true});
+  };
+
+  const closeLightbox=()=>{
+    if(!lightbox) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    if(lastFocused&&document.contains(lastFocused)) lastFocused.focus({preventScroll:true});
+  };
+
+  workItems.forEach((item,index)=>{
+    item.addEventListener('click',()=>openLightbox(index));
+    item.addEventListener('keydown',event=>{
+      if(event.key==='Enter'||event.key===' '){
+        event.preventDefault();
+        openLightbox(index);
+      }
+    });
+  });
+  closeBtn?.addEventListener('click',closeLightbox);
+  prevBtn?.addEventListener('click',event=>{event.stopPropagation();renderWork(currentWork-1);});
+  nextBtn?.addEventListener('click',event=>{event.stopPropagation();renderWork(currentWork+1);});
+  lightbox?.querySelector('[data-lightbox-close]')?.addEventListener('click',closeLightbox);
+  document.addEventListener('keydown',event=>{
+    if(!lightbox?.classList.contains('open')) return;
+    if(event.key==='Escape') closeLightbox();
+    if(event.key==='ArrowLeft') renderWork(currentWork-1);
+    if(event.key==='ArrowRight') renderWork(currentWork+1);
+  });
 });
 
 
@@ -77,69 +153,69 @@ document.addEventListener('DOMContentLoaded',()=>{
       "nav.home":"Beranda","nav.about":"Tentang","nav.eco":"Ekosistem","nav.work":"Karya","nav.process":"Proses","nav.faq":"FAQ","nav.cta":"Mari Bicara",
       "hero.eyebrow":"Ekosistem Kreatif dari Bali",
       "hero.title":"Ruang untuk <span>imajinasi,</span><br>tempat ide jadi karya.",
-      "hero.desc":"Imajireka hadir sebagai ruang kreatif yang mempertemukan proses belajar, layanan kreatif, dan produk merchandise dalam satu ekosistem.",
+      "hero.desc":"Imajireka adalah ekosistem kreatif dengan tiga layanan: Academy untuk belajar ilustrasi, Studio untuk pesan karya custom, dan Merchandise untuk produk ilustrasi siap pakai.",
       "hero.btn1":"Jelajahi Imajireka <i class=\"fa-solid fa-arrow-right\"></i>","hero.btn2":"Kenal Lebih Dekat",
       "hero.note":"Imajinasi · Kreasi · Untuk Semua",
-      "about.label":"Tentang Imajireka","about.title":"Lebih dari sekadar <span>perusahaan kreatif.</span>",
-      "about.p1":"Imajireka adalah ekosistem kreatif yang dibangun untuk memberi ruang bagi ide untuk tumbuh. Kami menghubungkan tiga bagian yang saling melengkapi: belajar melalui Academy, mewujudkan kebutuhan kreatif melalui Studio, dan membawa karya lebih dekat melalui Merchandise.",
-      "about.p2":"Dengan satu identitas, setiap bagian Imajireka memiliki peran yang berbeda namun bergerak menuju tujuan yang sama: membuat kreativitas lebih mudah dipelajari, digunakan, dan dinikmati.",
-      "about.point1":"Belajar dan berkembang bersama <span class=\"about-point-accent\">Imajireka Academy</span>","about.point2":"Wujudkan ide kreatifmu di <span class=\"about-point-accent\">Imajireka Studio</span>","about.point3":"Bawa karyamu menjadi nyata di <span class=\"about-point-accent\">Imajireka Merchandise</span>",
-      "eco.label":"Ekosistem Kami","eco.title":"Satu visi. <span>Tiga pilar.</span>",
-      "eco.desc":"Tiga bagian Imajireka dirancang untuk menemani perjalanan kreatif dari proses belajar hingga karya yang bisa dinikmati.",
-      "eco.kicker1":"Belajar","eco.kicker2":"Berkarya","eco.kicker3":"Pengalaman",
-      "eco.p1":"Ruang belajar ilustrasi untuk mengembangkan kemampuan, memahami proses kreatif, dan membangun kepercayaan diri dalam berkarya.",
-      "eco.p2":"Layanan kreatif untuk membantu menerjemahkan ide menjadi ilustrasi, visual, dan kebutuhan komunikasi yang lebih bermakna.",
-      "eco.p3":"Produk merchandise yang membawa karakter dan karya Imajireka ke dalam benda-benda yang dekat dengan keseharian.",
+      "about.label":"Tentang Imajireka","about.title":"Satu tempat untuk <span>belajar, berkarya, dan memiliki.</span>",
+      "about.p1":"Imajireka adalah ekosistem kreatif dari Bali. Kamu bisa belajar ilustrasi di Academy, pesan ilustrasi custom di Studio, dan beli produk ilustrasi di Merchandise.",
+      "about.p2":"Tiga layanan, satu tujuan: membuat kreativitas mudah dimulai, mudah dipakai, dan mudah dinikmati siapa pun.",
+      "about.point1":"Belajar ilustrasi dari dasar di <span class=\"about-point-accent\">Imajireka Academy</span>","about.point2":"Pesan ilustrasi custom sesuai kebutuhan di <span class=\"about-point-accent\">Imajireka Studio</span>","about.point3":"Beli produk ilustrasi original di <span class=\"about-point-accent\">Imajireka Merchandise</span>",
+      "eco.label":"Ekosistem Kami","eco.title":"Satu visi. <span>Tiga layanan.</span>",
+      "eco.desc":"Pilih sesuai kebutuhanmu: mau belajar, mau pesan karya, atau mau beli produk jadi.",
+      "eco.kicker1":"Belajar","eco.kicker2":"Custom","eco.kicker3":"Produk",
+      "eco.p1":"Kelas ilustrasi online dan offline, dari dasar sampai mahir. Untuk pemula yang ingin bisa menggambar dengan terarah.",
+      "eco.p2":"Jasa ilustrasi custom untuk buku, brand, kemasan, dan kebutuhan visual lain. Sampaikan idemu, kami gambar wujudnya.",
+      "eco.p3":"Stiker, print, apparel, dan produk lain dengan karakter original Imajireka. Siap dibeli dan dipakai sehari-hari.",
       "eco.btn1":"Kenali Academy <i class=\"fa-solid fa-arrow-right\"></i>","eco.btn2":"Kenali Studio <i class=\"fa-solid fa-arrow-right\"></i>","eco.btn3":"Kenali Merchandise <i class=\"fa-solid fa-arrow-right\"></i>",
-      "eco.line":"Belajar <b>→</b> Berkarya <b>→</b> Pengalaman",
-      "work.label":"Sekilas tentang Imajireka","work.title":"Ide yang <span>menjadi karya.</span>",
-      "work.desc":"Kreativitas Imajireka hadir dalam berbagai bentuk—dari proses belajar, eksplorasi visual, hingga karya yang dibawa ke kehidupan sehari-hari.",
-      "work.cap1":"Eksplorasi Ilustrasi","work.cap2":"Proses Berkarya","work.cap3":"Ruang untuk Bertumbuh","work.cap4":"Setiap Ide Punya Cerita",
-      "process.label":"Alur Kreatif Kami","process.title":"Dari ide menuju <span>impact.</span>",
-      "process.desc":"Setiap perjalanan kreatif punya bentuk yang berbeda. Imajireka menjaganya tetap terarah, kolaboratif, dan relevan dengan tujuan.",
-      "process.h1":"Temukan","process.h2":"Jelajahi","process.h3":"Ciptakan","process.h4":"Wujudkan",
-      "process.p1":"Memahami ide, kebutuhan, tujuan, dan cerita di balik sebuah karya.","process.p2":"Mengeksplorasi konsep, referensi, gaya visual, dan berbagai kemungkinan.","process.p3":"Mengubah konsep menjadi karya melalui proses yang terukur dan kolaboratif.","process.p4":"Membawa hasil akhir menjadi sesuatu yang bisa digunakan, dipelajari, atau dinikmati.",
-      "faq.label":"FAQ","faq.title":"Punya pertanyaan tentang <span>Imajireka?</span>","faq.desc":"Beberapa hal yang sering ingin diketahui sebelum mengenal lebih jauh ekosistem Imajireka.",
-      "faq.q1":"Apa itu Imajireka?","faq.a1":"Imajireka adalah creative ecosystem yang menaungi Imajireka Academy, Imajireka Studio, dan Imajireka Merchandise.",
-      "faq.q2":"Apa perbedaan Academy, Studio, dan Merchandise?","faq.a2":"Academy berfokus pada pembelajaran ilustrasi, Studio pada layanan kreatif, sedangkan Merchandise menghadirkan produk yang membawa karya Imajireka ke keseharian.",
-      "faq.q3":"Apakah saya bisa bekerja sama dengan Imajireka?","faq.a3":"Tentu. Untuk kebutuhan kolaborasi, jasa kreatif, atau pertanyaan lainnya, silakan hubungi tim Imajireka melalui kontak yang tersedia.",
-      "faq.q4":"Bagaimana cara menghubungi Imajireka?","faq.a4":"Kamu dapat menghubungi tim Imajireka melalui kanal komunikasi yang tercantum pada bagian kontak.",
-      "contact.label":"Hubungi Kami","contact.title":"MARI TERHUBUNG<br><span>DENGAN KAMI</span>","contact.desc":"Temukan jawaban atas pertanyaan yang paling sering diajukan mengenai kelas, studio kreatif, dan<br class=\"contact-break\"> merchandise.","contact.btn":"Hubungi Kami Melalui Whatsapp <i class=\"fa-brands fa-whatsapp\"></i>",
-      "footer.desc":"Imajireka adalah ruang kreatif yang menghubungkan belajar, berkarya, dan berkembang.","footer.explore":"Jelajahi","footer.about":"Tentang","footer.eco":"Ekosistem","footer.work":"Karya","footer.process":"Proses","footer.follow":"Ikuti Kami","footer.contact":"Kontak","footer.rights":"© 2026 Imajireka. All Rights Reserved.","footer.made":"Made with imagination."
+      "eco.line":"Belajar <b>→</b> Berkarya <b>→</b> Menikmati",
+      "work.label":"Galeri Karya","work.title":"Lihat <span>hasil karya kami.</span>",
+      "work.desc":"Dari suasana kelas, proses menggambar, sampai produk jadi. Semua dikerjakan langsung oleh tim Imajireka.",
+      "work.cap1":"Suasana Kelas Academy","work.cap2":"Produk Merchandise","work.cap3":"Praktik Menggambar","work.cap4":"Hasil Karya Studio",
+      "process.label":"Cara Kerja Kami","process.title":"Empat langkah <span>yang jelas.</span>",
+      "process.desc":"Alur yang sama kami pakai untuk kelas maupun proyek, supaya prosesnya transparan dan hasilnya tepat.",
+      "process.h1":"Ceritakan","process.h2":"Rancang","process.h3":"Kerjakan","process.h4":"Siap Pakai",
+      "process.p1":"Sampaikan kebutuhan, tujuan, dan referensimu. Kami pastikan arahnya jelas sejak awal.","process.p2":"Kami buatkan pilihan konsep dan gaya visual untuk kamu pilih dan revisi.","process.p3":"Konsep terpilih kami kerjakan sampai selesai, dengan update rutin dari tim.","process.p4":"Kamu terima hasil akhir yang siap dipakai, dicetak, atau dipublikasikan.",
+      "faq.label":"FAQ","faq.title":"Yang sering <span>ditanyakan.</span>","faq.desc":"Jawaban cepat sebelum kamu menghubungi kami.",
+      "faq.q1":"Apa itu Imajireka?","faq.a1":"Ekosistem kreatif dari Bali dengan tiga layanan: Academy untuk belajar ilustrasi, Studio untuk jasa ilustrasi custom, dan Merchandise untuk produk ilustrasi.",
+      "faq.q2":"Apa bedanya Academy, Studio, dan Merchandise?","faq.a2":"Academy untuk belajar. Studio untuk pesan karya custom. Merchandise untuk beli produk jadi.",
+      "faq.q3":"Apakah bisa kerja sama dengan Imajireka?","faq.a3":"Bisa. Kami terbuka untuk proyek ilustrasi, kolaborasi brand, dan kemitraan. Hubungi kami lewat WhatsApp di bagian Kontak.",
+      "faq.q4":"Bagaimana cara menghubungi Imajireka?","faq.a4":"Klik tombol WhatsApp di bagian Kontak bawah. Tim kami akan membalas di jam kerja.",
+      "contact.label":"Hubungi Kami","contact.title":"MARI TERHUBUNG<br><span>DENGAN KAMI</span>","contact.desc":"Punya ide, pertanyaan, atau kebutuhan khusus? Ceritakan lewat WhatsApp — kami bantu carikan solusi terbaik.","contact.btn":"Hubungi Kami via WhatsApp <i class=\"fa-brands fa-whatsapp\"></i>",
+      "footer.desc":"Ekosistem kreatif dari Bali untuk belajar ilustrasi, pesan jasa kreatif, dan beli merchandise.","footer.explore":"Jelajahi","footer.about":"Tentang","footer.eco":"Ekosistem","footer.work":"Karya","footer.process":"Proses","footer.follow":"Ikuti Kami","footer.contact":"Kontak","footer.rights":"© 2026 Imajireka. All Rights Reserved.","footer.made":"Made with imagination."
     },
     en: {
       "nav.home":"Home","nav.about":"About","nav.eco":"Ecosystem","nav.work":"Work","nav.process":"Process","nav.faq":"FAQ","nav.cta":"Let's Talk",
       "hero.eyebrow":"Creative Ecosystem from Bali",
-      "hero.title":"Create. <span>Learn.</span><br>Build your creative future.",
-      "hero.desc":"Imajireka is a creative space connecting learning, creative services, and merchandise in one ecosystem.",
+      "hero.title":"A space for <span>imagination,</span><br>where ideas become works.",
+      "hero.desc":"Imajireka is a creative ecosystem with three services: Academy to learn illustration, Studio to order custom work, and Merchandise for ready-to-use illustrated products.",
       "hero.btn1":"Explore Imajireka <i class=\"fa-solid fa-arrow-right\"></i>","hero.btn2":"Get to Know Us",
       "hero.note":"Imagination · Creation · For Everyone",
-      "about.label":"About Imajireka","about.title":"More than just a <span>creative company.</span>",
-      "about.p1":"Imajireka is a creative ecosystem built to give ideas room to grow. We connect three complementary parts: learning through Academy, bringing creative needs to life through Studio, and bringing creations closer through Merchandise.",
-      "about.p2":"With one identity, each part of Imajireka has a different role while moving toward the same goal: making creativity easier to learn, use, and enjoy.",
-      "about.point1":"Learn and grow with <span class=\"about-point-accent\">Imajireka Academy</span>","about.point2":"Bring your creative ideas to life at <span class=\"about-point-accent\">Imajireka Studio</span>","about.point3":"Turn your creations into reality with <span class=\"about-point-accent\">Imajireka Merchandise</span>",
-      "eco.label":"Our Ecosystem","eco.title":"One vision. <span>Three pillars.</span>",
-      "eco.desc":"Three parts of Imajireka are designed to accompany the creative journey from learning to creations that can be enjoyed.",
-      "eco.kicker1":"Learn","eco.kicker2":"Create","eco.kicker3":"Experience",
-      "eco.p1":"An illustration learning space to develop skills, understand the creative process, and build confidence in creating.",
-      "eco.p2":"Creative services that help translate ideas into illustrations, visuals, and more meaningful communication needs.",
-      "eco.p3":"Merchandise products that bring Imajireka's characters and creations into objects close to everyday life.",
+      "about.label":"About Imajireka","about.title":"One place to <span>learn, create, and own.</span>",
+      "about.p1":"Imajireka is a creative ecosystem from Bali. Learn illustration at the Academy, order custom illustration at the Studio, and buy illustrated products at Merchandise.",
+      "about.p2":"Three services, one goal: make creativity easy to start, easy to use, and easy to enjoy for everyone.",
+      "about.point1":"Learn illustration from the basics at <span class=\"about-point-accent\">Imajireka Academy</span>","about.point2":"Order custom illustration for your needs at <span class=\"about-point-accent\">Imajireka Studio</span>","about.point3":"Buy original illustrated products at <span class=\"about-point-accent\">Imajireka Merchandise</span>",
+      "eco.label":"Our Ecosystem","eco.title":"One vision. <span>Three services.</span>",
+      "eco.desc":"Choose what you need: learn, order custom work, or buy finished products.",
+      "eco.kicker1":"Learn","eco.kicker2":"Custom","eco.kicker3":"Products",
+      "eco.p1":"Online and offline illustration classes, from beginner to advanced. For anyone who wants to draw with clear direction.",
+      "eco.p2":"Custom illustration services for books, brands, packaging, and other visual needs. Tell us your idea, we draw it.",
+      "eco.p3":"Stickers, prints, apparel, and other products with original Imajireka characters. Ready to buy and use daily.",
       "eco.btn1":"Discover Academy <i class=\"fa-solid fa-arrow-right\"></i>","eco.btn2":"Discover Studio <i class=\"fa-solid fa-arrow-right\"></i>","eco.btn3":"Discover Merchandise <i class=\"fa-solid fa-arrow-right\"></i>",
-      "eco.line":"Learn <b>→</b> Create <b>→</b> Experience",
-      "work.label":"A Glimpse of Imajireka","work.title":"Ideas that <span>become creations.</span>",
-      "work.desc":"Imajireka's creativity takes many forms—from learning and visual exploration to creations brought into everyday life.",
-      "work.cap1":"Illustration Exploration","work.cap2":"The Creative Process","work.cap3":"Room to Grow","work.cap4":"Every Idea Has a Story",
-      "process.label":"Our Creative Flow","process.title":"From idea to <span>impact.</span>",
-      "process.desc":"Every creative journey takes a different shape. Imajireka keeps it focused, collaborative, and relevant to the goal.",
-      "process.h1":"Discover","process.h2":"Explore","process.h3":"Create","process.h4":"Deliver",
-      "process.p1":"Understanding the idea, needs, goals, and story behind a creation.","process.p2":"Exploring concepts, references, visual styles, and different possibilities.","process.p3":"Turning concepts into creations through a structured and collaborative process.","process.p4":"Bringing the final result to life as something that can be used, learned from, or enjoyed.",
-      "faq.label":"FAQ","faq.title":"Have questions about <span>Imajireka?</span>","faq.desc":"A few things people often want to know before getting to know the Imajireka ecosystem.",
-      "faq.q1":"What is Imajireka?","faq.a1":"Imajireka is a creative ecosystem that brings together Imajireka Academy, Imajireka Studio, and Imajireka Merchandise.",
-      "faq.q2":"What is the difference between Academy, Studio, and Merchandise?","faq.a2":"Academy focuses on illustration learning, Studio on creative services, while Merchandise brings Imajireka's creations into everyday products.",
-      "faq.q3":"Can I collaborate with Imajireka?","faq.a3":"Absolutely. For collaborations, creative services, or other inquiries, please contact the Imajireka team through the available contact channels.",
-      "faq.q4":"How can I contact Imajireka?","faq.a4":"You can contact the Imajireka team through the communication channels listed in the contact section.",
-      "contact.label":"Contact Us","contact.title":"GET IN TOUCH<br><span>WITH US</span>","contact.desc":"Find answers to the most common questions about Imajireka classes, creative studio, and<br class=\"contact-break\"> merchandise.","contact.btn":"Message Us On WhatsApp <i class=\"fa-brands fa-whatsapp\"></i>",
-      "footer.desc":"Imajireka is a creative space connecting learning, creating, and growing.","footer.explore":"Explore","footer.about":"About","footer.eco":"Ecosystem","footer.work":"Work","footer.process":"Process","footer.follow":"Follow Us","footer.contact":"Contact","footer.rights":"© 2026 Imajireka. All Rights Reserved.","footer.made":"Made with imagination."
+      "eco.line":"Learn <b>→</b> Create <b>→</b> Enjoy",
+      "work.label":"Our Work","work.title":"See <span>what we make.</span>",
+      "work.desc":"From classroom atmosphere, drawing process, to finished products. All made directly by the Imajireka team.",
+      "work.cap1":"Academy Class Atmosphere","work.cap2":"Merchandise Products","work.cap3":"Drawing Practice","work.cap4":"Studio Client Work",
+      "process.label":"How We Work","process.title":"Four <span>clear steps.</span>",
+      "process.desc":"The same flow we use for classes and projects, so the process is transparent and the result hits the goal.",
+      "process.h1":"Tell Us","process.h2":"Design","process.h3":"Produce","process.h4":"Ready to Use",
+      "process.p1":"Share your needs, goals, and references. We make sure the direction is clear from the start.","process.p2":"We create concept and style options for you to choose and revise.","process.p3":"We finish the chosen concept with regular updates from the team.","process.p4":"You receive the final result ready to use, print, or publish.",
+      "faq.label":"FAQ","faq.title":"Frequently <span>asked questions.</span>","faq.desc":"Quick answers before you contact us.",
+      "faq.q1":"What is Imajireka?","faq.a1":"A creative ecosystem from Bali with three services: Academy for learning illustration, Studio for custom illustration services, and Merchandise for illustrated products.",
+      "faq.q2":"What is the difference between Academy, Studio, and Merchandise?","faq.a2":"Academy is for learning. Studio is for ordering custom work. Merchandise is for buying finished products.",
+      "faq.q3":"Can I collaborate with Imajireka?","faq.a3":"Yes. We are open for illustration projects, brand collaborations, and partnerships. Contact us via WhatsApp in the Contact section.",
+      "faq.q4":"How can I contact Imajireka?","faq.a4":"Click the WhatsApp button in the Contact section below. Our team will reply during working hours.",
+      "contact.label":"Contact Us","contact.title":"GET IN TOUCH<br><span>WITH US</span>","contact.desc":"Have an idea, question, or specific need? Tell us via WhatsApp — we will help find the best solution.","contact.btn":"Message Us on WhatsApp <i class=\"fa-brands fa-whatsapp\"></i>",
+      "footer.desc":"A creative ecosystem from Bali to learn illustration, order creative services, and buy merchandise.","footer.explore":"Explore","footer.about":"About","footer.eco":"Ecosystem","footer.work":"Work","footer.process":"Process","footer.follow":"Follow Us","footer.contact":"Contact","footer.rights":"© 2026 Imajireka. All Rights Reserved.","footer.made":"Made with imagination."
     }
   };
 
