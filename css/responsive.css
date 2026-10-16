@@ -115,7 +115,7 @@
 
   .ecosystem-section > .container { padding:50px 1.2rem; }
   .ecosystem-card { padding:2rem; }
-  .ecosystem-card a { font-size:14px; padding:.65rem 1.5rem; }
+  .ecosystem-card a, .ecosystem-card .card-cta { font-size:14px; padding:.65rem 1.5rem; }
 
   .work-section { padding:50px 0 60px; }
   .work-section > .container { padding:0 1.2rem; }
