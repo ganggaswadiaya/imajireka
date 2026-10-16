@@ -592,8 +592,12 @@ header.navbar-scrolled {
   border-color: var(--color-orange-dark);
   transform: translateY(-2px);
 }
-.ecosystem-card .card-cta {
+.ecosystem-card span.card-cta {
   cursor: default;
+}
+.ecosystem-card a.card-cta {
+  cursor: pointer;
+  text-decoration: none;
 }
 .ecosystem-line {
   display: flex;

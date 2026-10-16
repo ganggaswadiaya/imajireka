@@ -176,10 +176,14 @@ document.addEventListener('DOMContentLoaded',()=>{
       "process.h1":"Ceritakan","process.h2":"Rancang","process.h3":"Kerjakan","process.h4":"Siap Pakai",
       "process.p1":"Sampaikan kebutuhan, tujuan, dan referensimu. Kami pastikan arahnya jelas sejak awal.","process.p2":"Kami buatkan pilihan konsep dan gaya visual untuk kamu pilih dan revisi.","process.p3":"Konsep terpilih kami kerjakan sampai selesai, dengan update rutin dari tim.","process.p4":"Kamu terima hasil akhir yang siap dipakai, dicetak, atau dipublikasikan.",
       "faq.label":"FAQ","faq.title":"Yang sering <span>ditanyakan.</span>","faq.desc":"Jawaban cepat sebelum kamu menghubungi kami.",
-      "faq.q1":"Apa itu Imajireka?","faq.a1":"Ekosistem kreatif dari Bali dengan tiga layanan: Academy untuk belajar ilustrasi, Studio untuk jasa ilustrasi custom, dan Merchandise untuk produk ilustrasi.",
-      "faq.q2":"Apa bedanya Academy, Studio, dan Merchandise?","faq.a2":"Academy untuk belajar. Studio untuk pesan karya custom. Merchandise untuk beli produk jadi.",
-      "faq.q3":"Apakah bisa kerja sama dengan Imajireka?","faq.a3":"Bisa. Kami terbuka untuk proyek ilustrasi, kolaborasi brand, dan kemitraan. Hubungi kami lewat WhatsApp di bagian Kontak.",
-      "faq.q4":"Bagaimana cara menghubungi Imajireka?","faq.a4":"Klik tombol WhatsApp di bagian Kontak bawah. Tim kami akan membalas di jam kerja.",
+      "faq.q1":"Di mana ada kursus ilustrasi digital di Bali untuk pemula?","faq.a1":"Di Imajireka Academy Bali. Ini adalah kursus ilustrasi digital di Bali untuk pemula sampai mahir, tersedia kelas online dan offline. Kamu belajar dari dasar menggambar digital, Procreate & Photoshop, sampai portofolio.",
+      "faq.q2":"Berapa biaya kursus ilustrasi digital di Bali?","faq.a2":"Biaya tergantung level dan format (privat/grup, online/offline). Hubungi WhatsApp kami untuk info biaya dan jadwal terbaru.",
+      "faq.q3":"Apa saja layanan jasa branding di Bali dari Imajireka?","faq.a3":"Imajireka Studio menyediakan jasa branding di Bali: logo, brand identity, maskot, kemasan, dan guideline. Lihat halaman jasa branding Bali kami.",
+      "faq.q4":"Apakah bisa pesan custom merchandise di Bali dalam jumlah kecil?","faq.a4":"Bisa. Kami melayani custom merchandise di Bali mulai satuan hingga partai — stiker, kaos, totebag, print. Lihat halaman custom merchandise Bali.",
+      "faq.q5":"Apa itu Imajireka?","faq.a5":"Ekosistem kreatif dari Bali dengan tiga layanan: Academy untuk belajar ilustrasi, Studio untuk jasa ilustrasi custom dan branding, dan Merchandise untuk custom merchandise.",
+      "faq.q6":"Apa bedanya Academy, Studio, dan Merchandise?","faq.a6":"Academy untuk kursus ilustrasi. Studio untuk jasa branding & ilustrasi custom. Merchandise untuk custom merchandise.",
+      "faq.q7":"Apakah bisa kerja sama dengan Imajireka?","faq.a7":"Bisa. Kami terbuka untuk proyek ilustrasi, kolaborasi brand, dan kemitraan. Hubungi kami lewat WhatsApp di bagian Kontak.",
+      "faq.q8":"Bagaimana cara menghubungi Imajireka?","faq.a8":"Klik tombol WhatsApp di bagian Kontak bawah. Tim kami akan membalas di jam kerja.",
       "contact.label":"Hubungi Kami","contact.title":"MARI TERHUBUNG<br><span>DENGAN KAMI</span>","contact.desc":"Punya ide, pertanyaan, atau kebutuhan khusus? Ceritakan lewat WhatsApp — kami bantu carikan solusi terbaik.","contact.btn":"Hubungi Kami via WhatsApp <i class=\"fa-brands fa-whatsapp\"></i>",
       "footer.desc":"Ekosistem kreatif dari Bali untuk belajar ilustrasi, pesan jasa kreatif, dan beli merchandise.","footer.explore":"Jelajahi","footer.about":"Tentang","footer.eco":"Ekosistem","footer.work":"Karya","footer.process":"Proses","footer.follow":"Ikuti Kami","footer.contact":"Kontak","footer.rights":"© 2026 Imajireka. All Rights Reserved.","footer.made":"Made with imagination."
     },
@@ -210,10 +214,14 @@ document.addEventListener('DOMContentLoaded',()=>{
       "process.h1":"Tell Us","process.h2":"Design","process.h3":"Produce","process.h4":"Ready to Use",
       "process.p1":"Share your needs, goals, and references. We make sure the direction is clear from the start.","process.p2":"We create concept and style options for you to choose and revise.","process.p3":"We finish the chosen concept with regular updates from the team.","process.p4":"You receive the final result ready to use, print, or publish.",
       "faq.label":"FAQ","faq.title":"Frequently <span>asked questions.</span>","faq.desc":"Quick answers before you contact us.",
-      "faq.q1":"What is Imajireka?","faq.a1":"A creative ecosystem from Bali with three services: Academy for learning illustration, Studio for custom illustration services, and Merchandise for illustrated products.",
-      "faq.q2":"What is the difference between Academy, Studio, and Merchandise?","faq.a2":"Academy is for learning. Studio is for ordering custom work. Merchandise is for buying finished products.",
-      "faq.q3":"Can I collaborate with Imajireka?","faq.a3":"Yes. We are open for illustration projects, brand collaborations, and partnerships. Contact us via WhatsApp in the Contact section.",
-      "faq.q4":"How can I contact Imajireka?","faq.a4":"Click the WhatsApp button in the Contact section below. Our team will reply during working hours.",
+      "faq.q1":"Where is a digital illustration course in Bali for beginners?","faq.a1":"At Imajireka Academy Bali. Our digital illustration course in Bali is for beginners to advanced, available online and offline. Learn digital drawing basics, Procreate & Photoshop, up to portfolio.",
+      "faq.q2":"How much does a digital illustration course in Bali cost?","faq.a2":"Pricing depends on level and format (private/group, online/offline). Contact us via WhatsApp for the latest pricing and schedule.",
+      "faq.q3":"What branding services do you offer in Bali?","faq.a3":"Imajireka Studio offers branding services in Bali: logo, brand identity, mascot, packaging, and guidelines. See our Bali branding page.",
+      "faq.q4":"Can I order custom merchandise in Bali in small quantities?","faq.a4":"Yes. We serve custom merchandise in Bali from single to bulk orders — stickers, shirts, totebags, prints.",
+      "faq.q5":"What is Imajireka?","faq.a5":"A creative ecosystem from Bali: Academy for courses, Studio for branding & custom illustration, and Merchandise for custom products.",
+      "faq.q6":"What is the difference between Academy, Studio, and Merchandise?","faq.a6":"Academy for courses. Studio for branding & custom work. Merchandise for custom merchandise.",
+      "faq.q7":"Can I collaborate with Imajireka?","faq.a7":"Yes. We are open for illustration projects, brand collaborations, and partnerships. Contact us via WhatsApp in the Contact section.",
+      "faq.q8":"How can I contact Imajireka?","faq.a8":"Click the WhatsApp button in the Contact section below. Our team will reply during working hours.",
       "contact.label":"Contact Us","contact.title":"GET IN TOUCH<br><span>WITH US</span>","contact.desc":"Have an idea, question, or specific need? Tell us via WhatsApp — we will help find the best solution.","contact.btn":"Message Us on WhatsApp <i class=\"fa-brands fa-whatsapp\"></i>",
       "footer.desc":"A creative ecosystem from Bali to learn illustration, order creative services, and buy merchandise.","footer.explore":"Explore","footer.about":"About","footer.eco":"Ecosystem","footer.work":"Work","footer.process":"Process","footer.follow":"Follow Us","footer.contact":"Contact","footer.rights":"© 2026 Imajireka. All Rights Reserved.","footer.made":"Made with imagination."
     }
@@ -253,8 +261,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     setHTML(".process-section .section-label",t["process.label"]); setHTML(".process-section .section-heading h2",t["process.title"]); setHTML(".process-section .section-heading > p",t["process.desc"]);
     setAll(".process-card h3",[t["process.h1"],t["process.h2"],t["process.h3"],t["process.h4"]]); setAll(".process-card p",[t["process.p1"],t["process.p2"],t["process.p3"],t["process.p4"]]);
     setHTML(".faq-intro .section-label",t["faq.label"]); setHTML(".faq-intro h2",t["faq.title"]); setHTML(".faq-intro > p",t["faq.desc"]);
-    setAll(".faq-list summary",[t["faq.q1"]+'<i class="fa-solid fa-plus"></i>',t["faq.q2"]+'<i class="fa-solid fa-plus"></i>',t["faq.q3"]+'<i class="fa-solid fa-plus"></i>',t["faq.q4"]+'<i class="fa-solid fa-plus"></i>']);
-    setAll(".faq-list details p",[t["faq.a1"],t["faq.a2"],t["faq.a3"],t["faq.a4"]]);
+    setAll(".faq-list summary",[t["faq.q1"]+'<i class="fa-solid fa-plus"></i>',t["faq.q2"]+'<i class="fa-solid fa-plus"></i>',t["faq.q3"]+'<i class="fa-solid fa-plus"></i>',t["faq.q4"]+'<i class="fa-solid fa-plus"></i>',t["faq.q5"]+'<i class="fa-solid fa-plus"></i>',t["faq.q6"]+'<i class="fa-solid fa-plus"></i>',t["faq.q7"]+'<i class="fa-solid fa-plus"></i>',t["faq.q8"]+'<i class="fa-solid fa-plus"></i>']);
+    setAll(".faq-list details p",[t["faq.a1"],t["faq.a2"],t["faq.a3"],t["faq.a4"],t["faq.a5"],t["faq.a6"],t["faq.a7"],t["faq.a8"]]);
     setHTML(".contact-inner .section-label",t["contact.label"]); setHTML(".contact-inner h2",t["contact.title"]); setHTML(".contact-inner > p",t["contact.desc"]); setHTML(".contact-button",t["contact.btn"]);
     setHTML(".footer-brand > p",t["footer.desc"]); setAll(".footer-links h4",[t["footer.explore"],t["footer.eco"],t["footer.follow"]]);
     const footerLinks=document.querySelectorAll(".footer-links");
