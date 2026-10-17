@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     setAll(".about-copy > p",[t["about.p1"],t["about.p2"]]); setAll(".about-points div span",[t["about.point1"],t["about.point2"],t["about.point3"]]);
     setHTML(".ecosystem-section .section-label",t["eco.label"]); setHTML(".ecosystem-section .section-heading h2",t["eco.title"]); setHTML(".ecosystem-section .section-heading > p",t["eco.desc"]);
     setAll(".ecosystem-card .card-kicker",[t["eco.kicker1"],t["eco.kicker2"],t["eco.kicker3"]]); setAll(".ecosystem-card p",[t["eco.p1"],t["eco.p2"],t["eco.p3"]]);
-    setAll(".ecosystem-card a, .ecosystem-card .card-cta",[t["eco.btn1"],t["eco.btn2"],t["eco.btn3"]]); setHTML(".ecosystem-line p",t["eco.line"]);
+    setAll(".ecosystem-card .nav-cta",[t["eco.btn1"],t["eco.btn2"],t["eco.btn3"]]); setHTML(".ecosystem-line p",t["eco.line"]);
     setHTML(".work-heading .section-label",t["work.label"]); setHTML(".work-heading h2",t["work.title"]); setHTML(".work-heading > p",t["work.desc"]);
     setAll(".work-item figcaption strong",[t["work.cap1"],t["work.cap2"],t["work.cap3"],t["work.cap4"]]);
     setHTML(".process-section .section-label",t["process.label"]); setHTML(".process-section .section-heading h2",t["process.title"]); setHTML(".process-section .section-heading > p",t["process.desc"]);

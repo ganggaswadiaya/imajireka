@@ -2194,3 +2194,46 @@ header.navbar-scrolled {
     right: 6px;
   }
 }
+
+/* =========================================================
+   ECOSYSTEM CTAs — match the navbar "Mari Bicara" button
+======================================================== */
+.ecosystem-card a.nav-cta,
+.ecosystem-card .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  margin-top: 13px;
+  padding: 0.65rem 1.5rem;
+  color: var(--color-white);
+  background: var(--color-orange);
+  border: 2px solid var(--color-orange);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.ecosystem-card span.nav-cta {
+  cursor: default;
+}
+.ecosystem-card a.nav-cta:hover,
+.ecosystem-card .nav-cta:hover {
+  background: var(--color-orange-dark);
+  border-color: var(--color-orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(247, 147, 30, 0.2);
+}
+.ecosystem-card a.nav-cta i,
+.ecosystem-card .nav-cta i {
+  margin-left: 0.4rem;
+  font-size: inherit;
+}
