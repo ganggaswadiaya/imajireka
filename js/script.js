@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       "about.label":"Tentang Imajireka","about.title":"Satu tempat untuk <span>belajar, berkarya, dan memiliki.</span>",
       "about.p1":"Imajireka adalah ekosistem kreatif dari Bali. Kamu bisa belajar ilustrasi di Academy, pesan ilustrasi custom di Studio, dan beli produk ilustrasi di Merchandise.",
       "about.p2":"Tiga layanan, satu tujuan: membuat kreativitas mudah dimulai, mudah dipakai, dan mudah dinikmati siapa pun.",
-      "about.point1":"Belajar ilustrasi dari dasar di <span class=\"about-point-accent\">Imajireka Academy</span>","about.point2":"Pesan ilustrasi custom sesuai kebutuhan di <span class=\"about-point-accent\">Imajireka Studio</span>","about.point3":"Beli produk ilustrasi original di <span class=\"about-point-accent\">Imajireka Merchandise</span>",
+      "about.point1":"Belajar ilustrasi dari dasar di <span class=\"about-point-accent\">Imajireka Academy</span>","about.point2":"Bangun identitas brand bersama <span class=\"about-point-accent\">Imajireka Studio</span>","about.point3":"Beli produk ilustrasi original di <span class=\"about-point-accent\">Imajireka Merchandise</span>",
       "eco.label":"Ekosistem Kami","eco.title":"Satu visi. <span>Tiga layanan.</span>",
       "eco.desc":"Pilih sesuai kebutuhanmu: mau belajar, mau pesan karya, atau mau beli produk jadi.",
       "eco.kicker1":"Belajar","eco.kicker2":"Custom","eco.kicker3":"Produk",
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       "about.label":"About Imajireka","about.title":"One place to <span>learn, create, and own.</span>",
       "about.p1":"Imajireka is a creative ecosystem from Bali. Learn illustration at the Academy, order custom illustration at the Studio, and buy illustrated products at Merchandise.",
       "about.p2":"Three services, one goal: make creativity easy to start, easy to use, and easy to enjoy for everyone.",
-      "about.point1":"Learn illustration from the basics at <span class=\"about-point-accent\">Imajireka Academy</span>","about.point2":"Order custom illustration for your needs at <span class=\"about-point-accent\">Imajireka Studio</span>","about.point3":"Buy original illustrated products at <span class=\"about-point-accent\">Imajireka Merchandise</span>",
+      "about.point1":"Learn illustration from the basics at <span class=\"about-point-accent\">Imajireka Academy</span>","about.point2":"Build your brand identity with <span class=\"about-point-accent\">Imajireka Studio</span>","about.point3":"Buy original illustrated products at <span class=\"about-point-accent\">Imajireka Merchandise</span>",
       "eco.label":"Our Ecosystem","eco.title":"One vision. <span>Three services.</span>",
       "eco.desc":"Choose what you need: learn, order custom work, or buy finished products.",
       "eco.kicker1":"Learn","eco.kicker2":"Custom","eco.kicker3":"Products",
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     setHTML(".hero-actions .btn-primary",t["hero.btn1"]); setHTML(".hero-actions .btn-secondary",t["hero.btn2"]);
     setHTML(".hero-note",'<span></span> '+t["hero.note"]); setHTML(".hero-copy .eyebrow",'<i class="fa-solid fa-sparkles"></i> '+t["hero.eyebrow"]);
     setHTML(".about-copy .section-label",t["about.label"]); setHTML(".about-copy h2",t["about.title"]);
-    setAll(".about-copy > p",[t["about.p1"],t["about.p2"]]); setAll(".about-points div span",[t["about.point1"],t["about.point2"],t["about.point3"]]);
+    setAll(".about-copy > p",[t["about.p1"],t["about.p2"]]); setAll(".about-points div > span",[t["about.point1"],t["about.point2"],t["about.point3"]]);
     setHTML(".ecosystem-section .section-label",t["eco.label"]); setHTML(".ecosystem-section .section-heading h2",t["eco.title"]); setHTML(".ecosystem-section .section-heading > p",t["eco.desc"]);
     setAll(".ecosystem-card .card-kicker",[t["eco.kicker1"],t["eco.kicker2"],t["eco.kicker3"]]); setAll(".ecosystem-card p",[t["eco.p1"],t["eco.p2"],t["eco.p3"]]);
     setAll(".ecosystem-card .nav-cta",[t["eco.btn1"],t["eco.btn2"],t["eco.btn3"]]); setHTML(".ecosystem-line p",t["eco.line"]);
